@@ -5,7 +5,6 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 
-<<<<<<< Updated upstream
 try {
   $conn = new PDO("mysql:host=$servername;dbname=kapper", $username, $password);
   // set the PDO error mode to exception
@@ -15,6 +14,3 @@ try {
   echo "Connection failed: " . $e->getMessage();
 }
 ?>
-=======
-$conn = new PDO($db_name, $username, $password);
->>>>>>> Stashed changes
