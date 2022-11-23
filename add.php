@@ -1,7 +1,10 @@
 <?php
 include("login/db.php");
+<<<<<<< Updated upstream
 $sql = "INSERT INTO `klanten`(`id`, `naam`, `email`, `telefoon`, `afspraak`, `geslacht`, `noties`, `praat`) VALUES ('$id', '$naam', '$email', '$telefoon', '$afspraak', '$geslacht', '$notites', '$praat')";
 $conn->exec($sql);
+=======
+>>>>>>> Stashed changes
 
 
 try {

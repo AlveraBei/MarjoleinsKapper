@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 
+<?php
+session_start();
+include("login/db.php");
+require("add.php");
+?>
+
 <head>
     <html>
     <title>Dashboard</title>
@@ -20,41 +26,32 @@
 
 
     <!-- START FORM -->
-    <form action="/add.php">
+    <form action="add.php">
         <label for="naam">Voor en achternaam:</label><br>
-        <input type="text" id="naam" value="naam"><br><br>
+        <input type="text" id="naam" value="naam" name="naam"><br><br>
 
         <label for="email">Email:</label><br>
-        <input type="text" id="email" value="email"><br><br>
+        <input type="text" id="email" value="email" name="email"><br><br>
 
         <label for="telefoon">Telefoon:</label><br>
-        <input type="text" id="telefoon" value="telefoon"><br><br>
+        <input type="number" id="telefoon" value="0612345678" name="telefoon"><br><br>
 
         <label for="date">Afspraak Datum:</label>
-        <input type="date" id="date" name="afspraak">
-
-        <br>
-        <br>
+        <input type="date" id="afspraak" name="afspraak"><br><br>
 
         <label for="geslacht">Geslacht:
             <input type="radio" name="geslacht" value="male"> Male
             <input type="radio" name="geslacht" value="female"> Female
-        </label>
+        </label><br><br>
 
-        <br>
-        <br>
-
-        <label for="notities">Notities:</label><br>
-        <input type="text" id="notities" value="notities"><br><br>
+        <label for="notities">Notities:</label>
+        <input type="text" id="notities" value="notities" name="notities"><br><br>
 
 
-        <label for="geslacht">Stil:
-            <input type="radio" name="geslacht" value="true"> bek dicht
-            <input type="radio" name="geslacht" value="false"> bek niet dicht
-        </label>
-
-        <br>
-        <br>
+        <label for="praat">Stil:
+            <input type="radio" name="praat" value="true"> bek dicht
+            <input type="radio" name="praat" value="false"> bek niet dicht
+        </label><br><br>
 
         <input type="submit" value="Submit">
     </form>
