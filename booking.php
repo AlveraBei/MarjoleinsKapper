@@ -33,10 +33,10 @@ include("function.php");
         <!-- START FORM -->
         <form action=" add.php" method="post">
             <label for="naam">Voor en achternaam:</label><br>
-            <input type="text" id="naam" placeholder="naam" name=" naam"><br><br>
+            <input type="text" id="naam" placeholder="Naam" name=" naam"><br><br>
 
             <label for="email">Email:</label><br>
-            <input type="text" id="email" placeholder="email" name="email"><br><br>
+            <input type="text" id="email" placeholder="Email" name="email"><br><br>
 
             <label for="telefoon">Telefoon:</label><br>
             <input type="text" id="telefoon" value="+31" name="telefoon"><br><br>
