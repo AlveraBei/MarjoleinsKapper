@@ -35,7 +35,7 @@ include("function.php");
         <?php
 
         $date = date("Y-m-d");
-        echo "<table style='border: solid 1px black;'>";
+        echo "<table style='display: flex;justify-content: center;'>";
         echo "<tr><th>Naam</th><th>Email</th><th>Telefoon</th><th>Geslacht</th><th>Notities</th><th>Bek dicht?</tr>";
 
         class TableRows extends RecursiveIteratorIterator
