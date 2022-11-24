@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 
 <?php
-include("login/db.php");
-// include("add.php");
+include("db.php");
 
-
+ 
 ?>
 
 <head>
@@ -22,6 +21,11 @@ include("login/db.php");
     <div class="topnav">
         <a class="active" href="dashboard.php">Dashboard</a>
         <a href="booking.php">Booking</a>
+        <form action="index.php" method="post">
+        <button type="submit" id="logout">logout</button>
+        </form>
+        
+
     </div>
     <!-- END TOP NAV -->
 

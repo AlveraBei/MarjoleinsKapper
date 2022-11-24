@@ -1,5 +1,5 @@
 <?php
-include("login/db.php");
+include("db.php");
 
 // get values form input text and number
 $naam = $_POST['naam'];
