@@ -12,6 +12,7 @@ if (isset($_SESSION['admin_id'])) {
     $row = $select->fetch(PDO::FETCH_ASSOC);
     $naam = $row['naam'];
 }
+$date = date("Y-m-d");
 ?>
 
 
@@ -53,7 +54,7 @@ if (isset($_SESSION['admin_id'])) {
     <tbody>
     <?php
     // pdo query select all from klanten
-    $stmt = $conn->prepare("SELECT * FROM `klanten`");
+    $stmt = $conn->prepare("SELECT * FROM `klanten`WHERE afspraak = '$date' ORDER BY tijd");
     $stmt->execute();
     $result = $stmt->fetchAll();
     foreach ($result as $row) {
