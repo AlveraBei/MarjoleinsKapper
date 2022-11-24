@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 
 <?php
+session_start();
 include("db.php");
-
+include("function.php");
 
 
 ?>
@@ -22,7 +23,7 @@ include("db.php");
     <div class="topnav">
         <a href="dashboard.php">Dashboard</a>
         <a class="active" href="booking.php">Booking</a>
-
+        <a href="logout.php">LogOut</a>
     </div>
     <!-- END TOP NAV -->
 

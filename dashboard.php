@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 
 <?php
+session_start();
 include("db.php");
+include("function.php");
 ?>
 
 
@@ -20,18 +22,21 @@ include("db.php");
     <div class="topnav">
         <a class="active" href="dashboard.php">Dashboard</a>
         <a href="booking.php">Booking</a>
+        <a href="logout.php">LogOut</a>
     </div>
     <!-- END TOP NAV -->
 
 
     <!-- START TABEL -->
+
     <div class="w3-center">
+        <h1>Afspraken voor vandaag:</h1>
 
         <?php
-        $date = date("Y-m-d");
 
+        $date = date("Y-m-d");
         echo "<table style='border: solid 1px black;'>";
-        echo "<tr><th>Naam</th><th>Email</th><th>Afspraak</th><th>Telefoon</th><th>Geslacht</th><th>Notities</th></tr>";
+        echo "<tr><th>Naam</th><th>Email</th><th>Telefoon</th><th>Geslacht</th><th>Notities</th><th>Bek dicht?</tr>";
 
         class TableRows extends RecursiveIteratorIterator
         {
@@ -60,7 +65,7 @@ include("db.php");
 
         try {
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $stmt = $conn->prepare("SELECT naam, email, afspraak, telefoon, geslacht, notities FROM klanten WHERE afspraak LIKE $date");
+            $stmt = $conn->prepare("SELECT naam, email, telefoon, geslacht, notities, praat FROM klanten WHERE afspraak = '$date'");
             $stmt->execute();
 
             // set the resulting array to associative
