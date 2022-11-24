@@ -39,7 +39,7 @@ if (isset($_SESSION['admin_id'])) {
 
     <div class="w3-center">
 
-        <h1><strong>Goedemiddag <?php echo $naam ?><strong></h1>
+        <h1><strong>Goedemiddag <?php echo $naam ?></strong></h1>
 
         <h3>Afspraken voor vandaag:</h3>
 
