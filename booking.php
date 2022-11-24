@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 
 <?php
-include("login/db.php");
-// include("add.php");
+include("db.php");
+
 
 
 ?>
