@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 
 <?php
-session_start();
 include("login/db.php");
-require("add.php");
+// include("add.php");
+
+
 ?>
 
 <head>
@@ -40,8 +41,8 @@ require("add.php");
         <input type="date" id="afspraak" name="afspraak"><br><br>
 
         <label for="geslacht">Geslacht:
-            <input type="radio" name="geslacht" value="male"> Male
-            <input type="radio" name="geslacht" value="female"> Female
+            <input type="radio" name="geslacht" value="M"> Male
+            <input type="radio" name="geslacht" value="F"> Female
         </label><br><br>
 
         <label for="notities">Notities:</label>
@@ -49,8 +50,8 @@ require("add.php");
 
 
         <label for="praat">Stil:
-            <input type="radio" name="praat" value="true"> bek dicht
-            <input type="radio" name="praat" value="false"> bek niet dicht
+            <input type="radio" name="praat" value="1"> bek dicht
+            <input type="radio" name="praat" value="0"> bek niet dicht
         </label><br><br>
 
         <input type="submit" value="Submit">

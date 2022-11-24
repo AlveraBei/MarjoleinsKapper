@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
         if($row['rol'] == 'admin'){
             $_SESSION['admin_id'] = $row['id'];
             header('location:dashbord_admin.php')
-        }elseif(){
+        }else if(){
             if($row['rol'] == 'admin'){
                 $_SESSION['admin_id'] = $row['id'];
                 header('location:dashbord_admin.php')
