@@ -12,13 +12,10 @@ $praat = $_POST['praat'];
 
 try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "INSERT INTO `klanten`(`naam`, `email`, `telefoon`, `afspraak`, `geslacht`, `noties`, `praat`) 
+    $sql = "INSERT INTO `klanten`(`naam`, `email`, `telefoon`, `afspraak`, `geslacht`, `notities`, `praat`) 
     VALUES ('$naam', '$email', '$telefoon', '$afspraak', '$geslacht', '$notites', '$praat')";
     $conn->exec($sql);
     echo "New record created successfully";
 } catch (PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
 }
-
-
-
