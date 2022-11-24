@@ -1,7 +1,8 @@
 <?php
+session_start();
 include("db.php");
+include("function.php");
 
-// get values form input text and number
 $naam = $_POST['naam'];
 $email = $_POST['email'];
 $telefoon = $_POST['telefoon'];
@@ -19,6 +20,5 @@ try {
 } catch (PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
 }
-
 
 

@@ -1,7 +1,7 @@
 <?php
-
-include 'db.php';
 session_start();
+include 'db.php';
+
 if(isset($_POST['submit'])){
 
    $email = $_POST['email'];
@@ -18,13 +18,13 @@ if(isset($_POST['submit'])){
       if($row['rol'] == 'admin'){
 
          $_SESSION['admin_id'] = $row['id'];
-         header('location:../dashboard.php');
-
+         header('location:dashboard.php');
+         die;
       }elseif($row['rol'] == 'user'){
 
          $_SESSION['user_id'] = $row['id'];
-         header('location:user_page.php');
-
+         header('location:dashboard.php');
+         die;
       }else{
          $message[] = 'no user found!';
       }
