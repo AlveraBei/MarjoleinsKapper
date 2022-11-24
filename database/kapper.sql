@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 22, 2022 at 09:03 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Host: localhost
+-- Generation Time: Nov 24, 2022 at 01:57 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -55,11 +55,19 @@ CREATE TABLE `klanten` (
   `naam` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `telefoon` int(13) NOT NULL,
-  `afspraak` date NOT NULL,
+  `afspraak` datetime NOT NULL,
   `geslacht` varchar(10) NOT NULL,
-  `noties` varchar(255) NOT NULL,
-  `praat` tinyint(1) NOT NULL
+  `notities` varchar(255) NOT NULL,
+  `praat` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `klanten`
+--
+
+INSERT INTO `klanten` (`id`, `naam`, `email`, `telefoon`, `afspraak`, `geslacht`, `notities`, `praat`) VALUES
+(16, 'Thijm', 'Thijmen@thijm', 612345678, '2022-11-24 00:00:00', 'M', 'Geen', 'Niet stil zijn'),
+(17, 'Mo', 'Mo@Mo', 834658347, '2022-11-24 00:00:00', 'M', 'saffe', 'Niet stil zijn');
 
 -- --------------------------------------------------------
 
@@ -111,6 +119,14 @@ CREATE TABLE `users` (
   `wachtwoord` varchar(50) NOT NULL,
   `kapperid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `rol`, `naam`, `email`, `wachtwoord`, `kapperid`) VALUES
+(1, 'admin', 'mo', 'a@gmail.com', 'wachtwoord123', 1),
+(2, 'admin', 'thijmen', 'thij@men.com', '123', 2);
 
 --
 -- Indexes for dumped tables
@@ -177,13 +193,19 @@ ALTER TABLE `afspraken`
 -- AUTO_INCREMENT for table `klanten`
 --
 ALTER TABLE `klanten`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
@@ -193,8 +215,8 @@ ALTER TABLE `services`
 -- Constraints for table `afspraakkt`
 --
 ALTER TABLE `afspraakkt`
-  ADD CONSTRAINT `afspraakkt_ibfk_1` FOREIGN KEY (`afspraak_id`) REFERENCES `afspraken` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `afspraakkt_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `afspraakkt_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `afspraakkt_ibfk_2` FOREIGN KEY (`afspraak_id`) REFERENCES `afspraken` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `afspraken`
@@ -208,12 +230,6 @@ ALTER TABLE `afspraken`
 ALTER TABLE `servicekt`
   ADD CONSTRAINT `servicekt_ibfk_1` FOREIGN KEY (`service_id`) REFERENCES `services` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `servicekt_ibfk_2` FOREIGN KEY (`afspraak_id`) REFERENCES `afspraken` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `services`
---
-ALTER TABLE `services`
-  ADD CONSTRAINT `services_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `userkt`
