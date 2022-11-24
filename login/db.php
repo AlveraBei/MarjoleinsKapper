@@ -1,5 +1,3 @@
-
-
 <?php
 $servername = "localhost";
 $username = "root";
@@ -13,4 +11,3 @@ try {
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }
-?>
