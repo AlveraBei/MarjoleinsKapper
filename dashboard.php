@@ -12,6 +12,7 @@ if (isset($_SESSION['admin_id'])) {
     $row = $select->fetch(PDO::FETCH_ASSOC);
     $naam = $row['naam'];
 }
+$date = date("Y-m-d");
 ?>
 
 
@@ -21,6 +22,8 @@ if (isset($_SESSION['admin_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 
 
@@ -34,65 +37,49 @@ if (isset($_SESSION['admin_id'])) {
     </div>
     <!-- END TOP NAV -->
 
-
-    <!-- START TABEL -->
-
     <div class="w3-center">
-
         <h1><strong>Goedemiddag <?php echo $naam ?></strong></h1>
-
+        <br><br>
         <h3>Afspraken voor vandaag:</h3>
+    </div>
 
-        <?php
+    <div>
 
-        $date = date("Y-m-d");
-
-        echo "<table style='display: flex;justify-content: center;'>";
-        echo "<tr><th>Tijd</th><th>Naam</th><th>Email</th><th>Telefoon</th><th>Geslacht</th><th>Notities</th><th>Bek dicht?</tr>";
-
-        class TableRows extends RecursiveIteratorIterator
-        {
-            function __construct($it)
-            {
-                parent::__construct($it, self::LEAVES_ONLY);
-            }
-
-            function current()
-            {
-                return "<td style='width:150px;border:1px solid black;'>" . parent::current() . "</td>";
-            }
-
-            function beginChildren()
-            {
-                echo "<tr>";
-            }
-
-            function endChildren()
-            {
-                echo "</tr>" . "\n";
-            }
-        }
-
-        try {
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-            // Haalt tijd op van database begaseerd op datum. Pakt alleen afspraken die vandaag zijn.
-            $stmt = $conn->prepare("SELECT tijd, naam, email, telefoon, geslacht, notities, praat FROM klanten WHERE afspraak = '$date' ORDER BY tijd");
-
-            $stmt->execute();
-
-            // set the resulting array to associative
-            $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-            foreach (new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k => $v) {
-                echo $v;
-            }
-        } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
-        }
-        $conn = null;
-        echo "</table>";
-        ?>
-        <!-- END TABEL -->
+        <!-- START TABEL -->
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Tijd</th>
+                    <th>Naam</th>
+                    <th>Email</th>
+                    <th>Telefoon</th>
+                    <th>Geslacht</th>
+                    <th>Notities</th>
+                    <th>wel of niet praten</th>
+                    <th>Bewerken</th>
+                    <th>Annuleren</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                // pdo query select all from klanten
+                $stmt = $conn->prepare("SELECT * FROM `klanten`WHERE afspraak = '$date' ORDER BY tijd");
+                $stmt->execute();
+                $result = $stmt->fetchAll();
+                foreach ($result as $row) {
+                    echo "</tr>" . "<br>";
+                    echo "<td>" . $row['tijd'] . "</td>";
+                    echo "<td>" . $row['naam'] . "</td>";
+                    echo "<td>" . $row['email'] . "</td>";
+                    echo "<td>" . $row['telefoon'] . "</td>";
+                    echo "<td>" . $row['geslacht'] . "</td>";
+                    echo "<td>" . $row['notities'] . "</td>";
+                    echo "<td>" . $row['praat'] . "</td>";
+                    echo "</tr>" . "<br>";
+                }
+                ?>
+            </tbody>
+        </table>
     </div>
 </body>
 
