@@ -42,7 +42,7 @@ include("function.php");
             <input type="number" id="telefoon" value="0612345678" name="telefoon"><br><br>
 
             <label for="date">Afspraak Datum:</label>
-            <input type="date" id="afspraak" name="afspraak"><br><br>
+            <input type="datetime-local" id="afspraak" name="afspraak"><br><br>
 
             <label for="geslacht">Geslacht:
                 <input type="radio" name="geslacht" value="M"> Male

@@ -46,6 +46,9 @@ if (isset($_SESSION['admin_id'])) {
         <?php
 
         $date = date("Y-m-d");
+        $time = date("H:i:s");
+        echo ($time);
+
         echo "<table style='display: flex;justify-content: center;'>";
         echo "<tr><th>Naam</th><th>Email</th><th>Telefoon</th><th>Geslacht</th><th>Notities</th><th>Bek dicht?</tr>";
 
