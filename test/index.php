@@ -56,8 +56,7 @@ session_start();
         <input type="submit" value="Submit">
     </form>
     <!-- END FORM -->
-
-
+dwaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
     <div class="w3-margin-top w3-center">
         <button class="button">Voeg Afspraak toe</button>
     </div>
