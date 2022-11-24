@@ -5,16 +5,13 @@ session_start();
 include("db.php");
 include("function.php");
 
-// if session is active then show naam from database
-if(isset($_SESSION['admin_id'])){
-   $admin_id = $_SESSION['admin_id'];
-   $select = $conn->prepare("SELECT * FROM `users` WHERE id = ?");
-   $select->execute([$admin_id]);
-   $row = $select->fetch(PDO::FETCH_ASSOC);
-   $naam = $row['naam'];
+if (isset($_SESSION['admin_id'])) {
+    $admin_id = $_SESSION['admin_id'];
+    $select = $conn->prepare("SELECT * FROM `users` WHERE id = ?");
+    $select->execute([$admin_id]);
+    $row = $select->fetch(PDO::FETCH_ASSOC);
+    $naam = $row['naam'];
 }
-
-
 ?>
 
 
@@ -42,9 +39,9 @@ if(isset($_SESSION['admin_id'])){
 
     <div class="w3-center">
 
-   
-    <h1>Goedemiddag <?php echo $naam ?></h1>
-        <h1>Afspraken voor vandaag:</h1>
+        <h1><strong>Goedemiddag <?php echo $naam ?><strong></h1>
+
+        <h3>Afspraken voor vandaag:</h3>
 
         <?php
 
