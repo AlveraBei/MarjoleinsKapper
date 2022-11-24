@@ -77,7 +77,10 @@ if (isset($_SESSION['admin_id'])) {
 
         try {
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $stmt = $conn->prepare("SELECT tijd, naam, email, telefoon, geslacht, notities, praat FROM klanten WHERE afspraak = '$date'");
+
+            // Haalt tijd op van database begaseerd op datum. Pakt alleen afspraken die vandaag zijn.
+            $stmt = $conn->prepare("SELECT tijd, naam, email, telefoon, geslacht, notities, praat FROM klanten WHERE afspraak = '$date' ORDER BY tijd");
+
             $stmt->execute();
 
             // set the resulting array to associative
