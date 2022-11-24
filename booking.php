@@ -39,7 +39,7 @@ include("function.php");
             <input type="text" id="email" placeholder="email" name="email"><br><br>
 
             <label for="telefoon">Telefoon:</label><br>
-            <input type="number" id="telefoon" value="06" name="telefoon"><br><br>
+            <input type="text" id="telefoon" value="+31" name="telefoon"><br><br>
 
             <label for="date">Afspraak Datum:</label>
             <input type="date" id="afspraak" name="afspraak"><br><br>

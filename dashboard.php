@@ -73,8 +73,6 @@ if (isset($_SESSION['admin_id'])) {
             }
         }
 
-
-
         try {
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
