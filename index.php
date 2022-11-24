@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
 <?php
+include("login/db.php");
 
-include("../login/db.php");
-session_start();
+
 ?>
 
 <head>
@@ -26,7 +26,7 @@ session_start();
 
 
     <!-- START FORM -->
-    <form action="add.php">
+    <form action="add.php" method="post">
         <label for="naam">Voor en achternaam:</label><br>
         <input type="text" id="naam" value="naam" name="naam"><br><br>
 
@@ -40,8 +40,8 @@ session_start();
         <input type="date" id="afspraak" name="afspraak"><br><br>
 
         <label for="geslacht">Geslacht:
-            <input type="radio" name="geslacht" value="male"> Male
-            <input type="radio" name="geslacht" value="female"> Female
+            <input type="radio" name="geslacht" value="M"> Male
+            <input type="radio" name="geslacht" value="F"> Female
         </label><br><br>
 
         <label for="notities">Notities:</label>
@@ -49,8 +49,8 @@ session_start();
 
 
         <label for="praat">Stil:
-            <input type="radio" name="praat" value="true"> bek dicht
-            <input type="radio" name="praat" value="false"> bek niet dicht
+            <input type="radio" name="praat" value="1"> bek dicht
+            <input type="radio" name="praat" value="0"> bek niet dicht
         </label><br><br>
 
         <input type="submit" value="Submit">
