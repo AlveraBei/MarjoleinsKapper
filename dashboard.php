@@ -46,11 +46,9 @@ if (isset($_SESSION['admin_id'])) {
         <?php
 
         $date = date("Y-m-d");
-        $time = date("H:i:s");
-        echo ($time);
 
         echo "<table style='display: flex;justify-content: center;'>";
-        echo "<tr><th>Naam</th><th>Email</th><th>Telefoon</th><th>Geslacht</th><th>Notities</th><th>Bek dicht?</tr>";
+        echo "<tr><th>Tijd</th><th>Naam</th><th>Email</th><th>Telefoon</th><th>Geslacht</th><th>Notities</th><th>Bek dicht?</tr>";
 
         class TableRows extends RecursiveIteratorIterator
         {
@@ -79,7 +77,7 @@ if (isset($_SESSION['admin_id'])) {
 
         try {
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $stmt = $conn->prepare("SELECT naam, email, telefoon, geslacht, notities, praat FROM klanten WHERE afspraak = '$date'");
+            $stmt = $conn->prepare("SELECT tijd, naam, email, telefoon, geslacht, notities, praat FROM klanten WHERE afspraak = '$date'");
             $stmt->execute();
 
             // set the resulting array to associative

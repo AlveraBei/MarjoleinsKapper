@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 24, 2022 at 01:57 PM
+-- Generation Time: Nov 24, 2022 at 02:45 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.29
 
@@ -55,7 +55,8 @@ CREATE TABLE `klanten` (
   `naam` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `telefoon` int(13) NOT NULL,
-  `afspraak` datetime NOT NULL,
+  `afspraak` date NOT NULL,
+  `tijd` time NOT NULL,
   `geslacht` varchar(10) NOT NULL,
   `notities` varchar(255) NOT NULL,
   `praat` varchar(50) NOT NULL
@@ -65,9 +66,9 @@ CREATE TABLE `klanten` (
 -- Dumping data for table `klanten`
 --
 
-INSERT INTO `klanten` (`id`, `naam`, `email`, `telefoon`, `afspraak`, `geslacht`, `notities`, `praat`) VALUES
-(16, 'Thijm', 'Thijmen@thijm', 612345678, '2022-11-24 00:00:00', 'M', 'Geen', 'Niet stil zijn'),
-(17, 'Mo', 'Mo@Mo', 834658347, '2022-11-24 00:00:00', 'M', 'saffe', 'Niet stil zijn');
+INSERT INTO `klanten` (`id`, `naam`, `email`, `telefoon`, `afspraak`, `tijd`, `geslacht`, `notities`, `praat`) VALUES
+(20, 'Thijmpie', 'thijm@gmail', 612345678, '2022-11-24', '12:30:00', 'M', 'Geen', 'Niet stil zijn'),
+(21, 'Mo', 'Mootje@mo', 612345467, '2022-11-24', '14:10:00', 'M', '23', 'Niet stil zijn');
 
 -- --------------------------------------------------------
 
@@ -193,7 +194,7 @@ ALTER TABLE `afspraken`
 -- AUTO_INCREMENT for table `klanten`
 --
 ALTER TABLE `klanten`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `services`

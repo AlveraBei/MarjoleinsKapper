@@ -1,19 +1,21 @@
 <?php
+session_start();
 include("db.php");
+include("function.php");
 
-// get values form input text and number
 $naam = $_POST['naam'];
 $email = $_POST['email'];
 $telefoon = $_POST['telefoon'];
 $afspraak = $_POST['afspraak'];
+$tijd = $_POST['tijd'];
 $geslacht = $_POST['geslacht'];
 $notites = $_POST['notities'];
 $praat = $_POST['praat'];
 
 try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "INSERT INTO `klanten`(`naam`, `email`, `telefoon`, `afspraak`, `geslacht`, `notities`, `praat`) 
-    VALUES ('$naam', '$email', '$telefoon', '$afspraak', '$geslacht', '$notites', '$praat')";
+    $sql = "INSERT INTO `klanten`(`naam`, `email`, `telefoon`, `afspraak`, `tijd`, `geslacht`, `notities`, `praat`) 
+    VALUES ('$naam', '$email', '$telefoon', '$afspraak', '$tijd', '$geslacht', '$notites', '$praat')";
     $conn->exec($sql);
     echo "New record created successfully";
 } catch (PDOException $e) {

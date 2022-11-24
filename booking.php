@@ -33,16 +33,19 @@ include("function.php");
         <!-- START FORM -->
         <form action=" add.php" method="post">
             <label for="naam">Voor en achternaam:</label><br>
-            <input type="text" id="naam" value="naam" name="naam"><br><br>
+            <input type="text" id="naam" placeholder="naam" name=" naam"><br><br>
 
             <label for="email">Email:</label><br>
-            <input type="text" id="email" value="email" name="email"><br><br>
+            <input type="text" id="email" placeholder="email" name="email"><br><br>
 
             <label for="telefoon">Telefoon:</label><br>
-            <input type="number" id="telefoon" value="0612345678" name="telefoon"><br><br>
+            <input type="number" id="telefoon" value="06" name="telefoon"><br><br>
 
             <label for="date">Afspraak Datum:</label>
-            <input type="datetime-local" id="afspraak" name="afspraak"><br><br>
+            <input type="date" id="afspraak" name="afspraak"><br><br>
+
+            <label for="time">Afspraak Tijd:</label>
+            <input type="time" id="tijd" name="tijd"><br><br>
 
             <label for="geslacht">Geslacht:
                 <input type="radio" name="geslacht" value="M"> Male
@@ -50,7 +53,7 @@ include("function.php");
             </label><br><br>
 
             <label for="notities">Notities:</label>
-            <input type="text" id="notities" value="notities" name="notities"><br><br>
+            <input type="text" id="notities" placeholder="meneer kan bijten" name="notities"><br><br>
 
 
             <label for="praat">Stil:
