@@ -27,7 +27,7 @@ include("login/db.php");
 
 
     <!-- START FORM -->
-    <form action="add.php">
+    <form action="add.php" method="post">
         <label for="naam">Voor en achternaam:</label><br>
         <input type="text" id="naam" value="naam" name="naam"><br><br>
 
