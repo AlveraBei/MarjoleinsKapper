@@ -13,6 +13,7 @@ if (isset($_SESSION['admin_id'])) {
     $naam = $row['naam'];
 }
 $date = date("Y-m-d");
+error_reporting(0);
 ?>
 
 
@@ -31,18 +32,24 @@ $date = date("Y-m-d");
 
     <!-- START TOP NAV -->
     <div class="topnav">
-        <a class="active" href="dashboard.php">Dashboard</a>
+        <a href="dashboard.php">Dashboard</a>
         <a href="booking.php">Booking</a>
-        <a href="kalender.php">Kalender</a>
+        <a class="active" href="kalender.php">Kalender</a>
         <a href="logout.php">LogOut</a>
     </div>
     <!-- END TOP NAV -->
 
     <div class="w3-center">
-        <h1><strong>Goedemiddag <?php echo $naam ?></strong></h1>
-        <h3><?php echo date('d-m-y h:i:s'); ?></h3>
         <br><br>
-        <h3>Afspraken voor vandaag:</h3>
+
+        <form action="kalender.php" method="get">
+
+            <label for="datum">Afspraak Datum:</label>
+            <input type="date" id="datum" name="datum" value="<?php echo $_GET["datum"] ?>"><br><br>
+
+            <input type="submit" value="Submit"><br><br>
+        </form>
+
     </div>
 
     <div>
@@ -57,13 +64,15 @@ $date = date("Y-m-d");
                     <th>Geslacht</th>
                     <th>Notities</th>
                     <th>wel of niet praten</th>
+                    <th>Bewerken</th>
                     <th>Annuleren</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                 // pdo query select all from klanten
-                $stmt = $conn->prepare("SELECT * FROM `klanten`WHERE afspraak = '$date' ORDER BY tijd");
+                $datum = $_GET["datum"];
+                $stmt = $conn->prepare("SELECT * FROM `klanten`WHERE afspraak = '$datum' ORDER BY tijd");
                 $stmt->execute();
                 $result = $stmt->fetchAll();
                 foreach ($result as $row) {
@@ -75,7 +84,6 @@ $date = date("Y-m-d");
                     echo "<td>" . $row['geslacht'] . "</td>";
                     echo "<td>" . $row['notities'] . "</td>";
                     echo "<td>" . $row['praat'] . "</td>";
-                    echo "<td>" . "<button>Annuleer</button>" . "</td>";
                     echo "</tr>" . "<br>";
                 }
                 ?>
