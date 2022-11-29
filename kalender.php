@@ -84,6 +84,7 @@ error_reporting(0);
                     echo "<td>" . $row['geslacht'] . "</td>";
                     echo "<td>" . $row['notities'] . "</td>";
                     echo "<td>" . $row['praat'] . "</td>";
+                    echo "<td>" . "<a href='deleterow.php?id=" . $row['id'] . "' class='btn btn-danger'>Delete</a>" . "</td>";
                     echo "</tr>" . "<br>";
                 }
                 ?>
