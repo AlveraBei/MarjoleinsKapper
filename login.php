@@ -19,15 +19,12 @@ if (isset($_POST['submit'])) {
 
          $_SESSION['admin_id'] = $row['id'];
          $_SESSION['admin_name'] = $row['naam'];
-         if ($row['rol'] == 'user') {
-            $_SESSION['user_id'] = $row['id'];
-            header('Location: dashboard.php');
-            die;
-         } else {
-            header('Location: dashboard.php');
-            die;
-         }
-      } else {
+      }elseif($row['rol'] == 'user'){
+
+         $_SESSION['user_id'] = $row['id'];
+         header('location:dashboard.php');
+         die;
+      }else{
          $message[] = 'no user found!';
       }
    } else {
