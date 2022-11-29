@@ -44,7 +44,6 @@ $date = date("Y-m-d");
     </div>
 
     <div>
-
         <!-- START TABEL -->
         <table class="table table-bordered table-striped">
             <thead>
