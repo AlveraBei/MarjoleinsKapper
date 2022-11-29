@@ -12,17 +12,18 @@ include("function.php");
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 
 
 <body>
-
     <!-- START TOP NAV -->
     <div class="topnav">
         <a href="dashboard.php">Dashboard</a>
-        <a class="active" href="booking.php">Booking</a>
+        <a class="active" href="booking.php">Afspraak Maken</a>
         <a href="kalender.php">Kalender</a>
-        <a href="logout.php">LogOut</a>
+        <a href="logout.php">Log uit</a>
     </div>
     <!-- END TOP NAV -->
 
@@ -31,32 +32,32 @@ include("function.php");
         <!-- START FORM -->
         <form action=" add.php" method="post">
             <label for="naam">Voor en achternaam:</label><br>
-            <input type="text" id="naam" placeholder="Naam" name=" naam"><br><br>
+            <input type="text" id="naam" placeholder="Naam" name=" naam" required><br><br>
 
             <label for="email">Email:</label><br>
-            <input type="text" id="email" placeholder="Email" name="email"><br><br>
+            <input type="text" id="email" placeholder="Email" name="email" required><br><br>
 
             <label for="telefoon">Telefoon:</label><br>
-            <input type="text" id="telefoon" value="+31" name="telefoon"><br><br>
+            <input type="text" id="telefoon" value="+31" name="telefoon" required><br><br>
 
             <label for="date">Afspraak Datum:</label>
-            <input type="date" id="afspraak" name="afspraak"><br><br>
+            <input type="date" id="afspraak" name="afspraak" required><br><br>
 
             <label for="time">Afspraak Tijd:</label>
-            <input type="time" id="tijd" name="tijd"><br><br>
+            <input type="time" id="tijd" name="tijd" required><br><br>
 
             <label for="geslacht">Geslacht:
-                <input type="radio" name="geslacht" value="M"> Male
-                <input type="radio" name="geslacht" value="F"> Female
+                <input type="radio" name="geslacht" value="Man" required> Man
+                <input type="radio" name="geslacht" value="Vrouw" required> Vrouw
             </label><br><br>
 
             <label for="notities">Notities:</label>
-            <input type="text" id="notities" placeholder="meneer kan bijten" name="notities"><br><br>
+            <input type="text" id="notities" placeholder="meneer kan bijten" name="notities" required><br><br>
 
 
             <label for="praat">Stil:
-                <input type="radio" name="praat" value="Stil zijn"> bek dicht
-                <input type="radio" name="praat" value="Niet stil zijn"> bek niet dicht
+                <input type="radio" name="praat" value="Stil zijn" required> bek dicht
+                <input type="radio" name="praat" value="Niet stil zijn" required> bek niet dicht
             </label><br><br>
 
             <input class="button" type="submit" value="Submit">

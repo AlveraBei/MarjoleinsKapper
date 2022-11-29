@@ -32,22 +32,23 @@ $date = date("Y-m-d");
     <!-- START TOP NAV -->
     <div class="topnav">
         <a class="active" href="dashboard.php">Dashboard</a>
-        <a href="booking.php">Booking</a>
+        <a href="booking.php">Afspraak Maken</a>
         <a href="kalender.php">Kalender</a>
-        <a href="logout.php">LogOut</a>
+        <a href="logout.php">Log uit</a>
     </div>
     <!-- END TOP NAV -->
 
     <div class="w3-center">
-        <h1><strong>Goedemiddag <?php echo $naam ?></strong></h1>
+        <br><br>
+        <h1><strong>Goedemiddag, <?php echo $naam ?></strong></h1>
         <h3><?php echo date('d-m-y h:i:s'); ?></h3>
         <br><br>
-        <h3>Afspraken voor vandaag:</h3>
+        <h3>Afspraken voor <strong>vandaag:</strong></h3>
     </div>
 
     <div>
         <!-- START TABEL -->
-        <table class="table table-bordered table-striped">
+        <table class="table table-bordered table-striped w3-center">
             <thead>
                 <tr>
                     <th>Tijd</th>
@@ -75,7 +76,7 @@ $date = date("Y-m-d");
                     echo "<td>" . $row['geslacht'] . "</td>";
                     echo "<td>" . $row['notities'] . "</td>";
                     echo "<td>" . $row['praat'] . "</td>";
-                    echo "<td>" . "<a href='deleterowdashboard.php?id=" . $row['id'] . "' class='btn btn-danger'>Delete</a>" . "</td>";
+                    echo "<td>" . "<a href='deleterow.php?id=" . $row['id'] . "' class='btn btn-danger'>╳</a>" . "</td>";
 
                     echo "</tr>" . "<br>";
                 }
