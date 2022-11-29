@@ -18,7 +18,8 @@ if(isset($_POST['submit'])){
       if($row['rol'] == 'admin'){
 
          $_SESSION['admin_id'] = $row['id'];
-         $_SESSION['admin_name'] = $row['naam'];elseif($row['rol'] == 'user'){
+         $_SESSION['admin_name'] = $row['naam'];
+      }elseif($row['rol'] == 'user'){
 
          $_SESSION['user_id'] = $row['id'];
          header('location:dashboard.php');
