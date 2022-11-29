@@ -4,9 +4,6 @@
 session_start();
 include("db.php");
 include("function.php");
-
-
-
 ?>
 
 <head>
@@ -24,6 +21,7 @@ include("function.php");
     <div class="topnav">
         <a href="dashboard.php">Dashboard</a>
         <a class="active" href="booking.php">Booking</a>
+        <a href="kalender.php">Kalender</a>
         <a href="logout.php">LogOut</a>
     </div>
     <!-- END TOP NAV -->

@@ -31,17 +31,24 @@ $date = date("Y-m-d");
 
     <!-- START TOP NAV -->
     <div class="topnav">
-        <a class="active" href="dashboard.php">Dashboard</a>
+        <a href="dashboard.php">Dashboard</a>
         <a href="booking.php">Booking</a>
-        <a href="kalender.php">Kalender</a>
+        <a class="active" href="kalender.php">Kalender</a>
         <a href="logout.php">LogOut</a>
     </div>
     <!-- END TOP NAV -->
 
     <div class="w3-center">
-        <h1><strong>Goedemiddag <?php echo $naam ?></strong></h1>
         <br><br>
-        <h3>Afspraken voor vandaag:</h3>
+
+        <form action="kalender_get.php" method="get">
+
+            <label for="datum">Afspraak Datum:</label>
+            <input type="date" id="datum" name="datum" value="<?php echo $_GET["datum"] ?>"><br><br>
+
+            <input class="button" type="submit" value="Submit">
+        </form>
+
     </div>
 
     <div>
@@ -63,7 +70,8 @@ $date = date("Y-m-d");
             <tbody>
                 <?php
                 // pdo query select all from klanten
-                $stmt = $conn->prepare("SELECT * FROM `klanten`WHERE afspraak = '$date' ORDER BY tijd");
+                $datum = $_GET["datum"];
+                $stmt = $conn->prepare("SELECT * FROM `klanten`WHERE afspraak = '$datum' ORDER BY tijd");
                 $stmt->execute();
                 $result = $stmt->fetchAll();
                 foreach ($result as $row) {
