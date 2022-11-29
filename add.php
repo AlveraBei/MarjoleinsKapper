@@ -18,7 +18,7 @@ try {
     VALUES ('$naam', '$email', '$telefoon', '$afspraak', '$tijd', '$geslacht', '$notites', '$praat')";
     $conn->exec($sql);
     echo "New record created successfully";
-    header("location:booking.php");
+    header("location:dashboard.php");
 } catch (PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
 }
