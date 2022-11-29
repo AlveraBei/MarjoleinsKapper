@@ -1,6 +1,11 @@
 <?php
 include("db.php");
 
-$sql = "DELETE FROM klanten WHERE id=$_GET[id]";
-$stmt = $pdo->prepare($sql);
-$stmt->execute([$id]);
+// delete from database
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $delete = $conn->prepare("DELETE FROM `klanten` WHERE id = ?");
+    $delete->execute([$id]);
+    header("location:dashboard.php");
+}
+?>
