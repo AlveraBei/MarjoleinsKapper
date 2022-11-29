@@ -40,6 +40,7 @@ $date = date("Y-m-d");
 
     <div class="w3-center">
         <h1><strong>Goedemiddag <?php echo $naam ?></strong></h1>
+        <h3><?php echo date('d-m-y h:i:s'); ?></h3>
         <br><br>
         <h3>Afspraken voor vandaag:</h3>
     </div>

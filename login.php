@@ -21,9 +21,11 @@ if (isset($_POST['submit'])) {
          $_SESSION['admin_name'] = $row['naam'];
          if ($row['rol'] == 'user') {
             $_SESSION['user_id'] = $row['id'];
-            header('location:dashboard.php');
+            header('Location: dashboard.php');
             die;
          } else {
+            header('Location: dashboard.php');
+            die;
          }
       } else {
          $message[] = 'no user found!';
