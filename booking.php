@@ -55,8 +55,8 @@ include("function.php");
 
 
             <label for="praat">Stil:
-                <input type="radio" name="praat" value="Niet stil zijn"> bek dicht
-                <input type="radio" name="praat" value="Stil zijn"> bek niet dicht
+                <input type="radio" name="praat" value="Stil zijn"> bek dicht
+                <input type="radio" name="praat" value="Niet stil zijn"> bek niet dicht
             </label><br><br>
 
             <input class="button" type="submit" value="Submit">
