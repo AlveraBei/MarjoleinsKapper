@@ -75,7 +75,7 @@ $date = date("Y-m-d");
                     echo "<td>" . $row['geslacht'] . "</td>";
                     echo "<td>" . $row['notities'] . "</td>";
                     echo "<td>" . $row['praat'] . "</td>";
-                    echo "<td>" . "<button>Annuleer</button>" . "</td>";
+                    echo "<td>" . "<a href=deleterow.php?id=" . $row['id'] . ">annuleren</a>" . "</td>";
                     echo "</tr>" . "<br>";
                 }
                 ?>
