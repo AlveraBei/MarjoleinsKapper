@@ -60,9 +60,6 @@ include("function.php");
                 <input type="radio" name="praat" value="Niet stil zijn" required> bek niet dicht
             </label><br><br>
 
-            <label for="notities">Prijs:</label>
-            <h4>$45</h4><br><br>
-
             <input class="button" type="submit" value="Opslaan">
         </form>
     </div>
