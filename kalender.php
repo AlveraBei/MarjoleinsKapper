@@ -46,7 +46,7 @@ error_reporting(0);
             <label for="datum">Afspraak Datum:</label>
             <input type="date" id="datum" name="datum" value="<?php echo $_GET["datum"] ?>"><br><br>
 
-            <input type="submit" value="Submit"><br><br>
+            <input type="submit" value="Pas toe"><br><br>
         </form>
     </div>
 
