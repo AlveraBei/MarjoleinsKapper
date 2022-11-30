@@ -63,7 +63,7 @@ include("function.php");
             <label for="notities">Prijs:</label>
             <h4>$45</h4><br><br>
 
-            <input class="button" type="submit" value="Sla op">
+            <input class="button" type="submit" value="Opslaan">
         </form>
     </div>
     <!-- END FORM -->
