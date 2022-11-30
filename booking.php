@@ -44,7 +44,7 @@ include("function.php");
             <input type="date" id="afspraak" name="afspraak" required><br><br>
 
             <label for="time">Afspraak Tijd:</label>
-            <input type="time" id="tijd" name="tijd" required><br><br>
+            <input type="time" id="tijd" name="tijd" min="09:00" max="18:00" required><br><br>
 
             <label for="geslacht">Geslacht:
                 <input type="radio" name="geslacht" value="Man" required> Man
