@@ -19,7 +19,7 @@ error_reporting(0);
 
 <head>
     <html>
-    <title>Dashboard</title>
+    <title>Kalender</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="style.css">
