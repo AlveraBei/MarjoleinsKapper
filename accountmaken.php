@@ -35,6 +35,7 @@ $date = date("Y-m-d");
         <a href="booking.php">Afspraak Maken</a>
         <a href="kalender.php">Kalender</a>
         <a class="active" href="accountmaken.php">account maken</a>
+        <a href="accountdashboard.php">account dashboard</a>
         <a href="logout.php">Log uit</a>
     </div>
     <!-- END TOP NAV -->

@@ -13,13 +13,12 @@ if (isset($_SESSION['admin_id'])) {
     $naam = $row['naam'];
 }
 $date = date("Y-m-d");
-error_reporting(0);
 ?>
 
 
 <head>
     <html>
-    <title>Kalender</title>
+    <title>Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="style.css">
@@ -32,25 +31,21 @@ error_reporting(0);
 
     <!-- START TOP NAV -->
     <div class="topnav">
-        <a href="dashboard.php">Dashboard</a>
+        <a  href="dashboard.php">Dashboard</a>
         <a href="booking.php">Afspraak Maken</a>
-        <a class="active" href="kalender.php">Kalender</a>
-        <a href="accountmaken.php">accountmaken</a>
-        <a href="accountdashboard.php">account dashboard</a>
-
+        <a href="kalender.php">Kalender</a>
+        <a href="accountmaken.php">account maken</a>
+        <a class="active" href="accountdashboard.php">account dashboard</a>
         <a href="logout.php">Log uit</a>
     </div>
     <!-- END TOP NAV -->
 
     <div class="w3-center">
         <br><br>
-        <form action="kalender.php" method="get">
-
-            <label for="datum">Afspraak Datum:</label>
-            <input type="date" id="datum" name="datum" value="<?php echo $_GET["datum"] ?>"><br><br>
-
-            <input type="submit" value="Pas toe"><br><br>
-        </form>
+        <h1><strong>Goedemiddag, <?php echo $naam ?></strong></h1>
+        <h3><?php echo date('d-m-y h:i:s'); ?></h3>
+        <br><br>
+        <h3>Afspraken voor <strong>vandaag:</strong></h3>
     </div>
 
     <div>
@@ -71,8 +66,7 @@ error_reporting(0);
             <tbody>
                 <?php
                 // pdo query select all from klanten
-                $datum = $_GET["datum"];
-                $stmt = $conn->prepare("SELECT * FROM `klanten`WHERE afspraak = '$datum' ORDER BY tijd");
+                $stmt = $conn->prepare("SELECT * FROM `klanten`WHERE afspraak = '$date' ORDER BY tijd");
                 $stmt->execute();
                 $result = $stmt->fetchAll();
                 foreach ($result as $row) {
@@ -85,6 +79,7 @@ error_reporting(0);
                     echo "<td>" . $row['notities'] . "</td>";
                     echo "<td>" . $row['praat'] . "</td>";
                     echo "<td>" . "<a href='deleterow.php?id=" . $row['id'] . "' class='btn btn-danger'>╳</a>" . "</td>";
+
                     echo "</tr>" . "<br>";
                 }
                 ?>

@@ -24,6 +24,8 @@ include("function.php");
         <a class="active" href="booking.php">Afspraak Maken</a>
         <a href="kalender.php">Kalender</a>
         <a href="accountmaken.php">accountmaken</a>
+        <a href="accountdashboard.php">account dashboard</a>
+
         <a href="logout.php">Log uit</a>
         
     </div>
