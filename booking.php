@@ -35,6 +35,25 @@ include("function.php");
     <div class="w3-center w3-margin-top">
         <!-- START FORM -->
         <form action=" add.php" method="post">
+        <strong><label for="naam">kapsel:</label></strong><br>
+
+        <!-- <select name="beforethefact" id="cars">
+            <option value="1">puntjes bijwerken - dames</option>
+            <option value="2">kort haar - dames</option>
+            <option value="3">middenlang haar (tot schouders) - dames</option>
+            <option value="4">lang haar - dames</option>
+            <option value="5">kort haar - heren</option>
+            <option value="6">lang haar - heren</option>
+            <option value="7">kort haar & baard trimmen - heren</option>
+            <option value="8">lang haar & baard trimmen - heren</option>
+        </select>       
+        <br><br>
+        <strong><label for="naam">wassen en of föhnen</label></strong><br>
+
+            <select name="afterthefact" id="cars">
+                <option value="9">wassen</option>
+                <option value="10">wassen & föhnen</option>
+            </select>   <br><br> -->
             <strong><label for="naam">Voor en achternaam:</label></strong><br>
             <input type="text" id="naam" placeholder="Naam" name=" naam" required><br><br>
 
@@ -44,10 +63,10 @@ include("function.php");
             <strong><label for="telefoon">Telefoon:</label></strong><br>
             <input type="text" id="telefoon" value="+31" name="telefoon" required><br><br>
 
-            <strong><label for="date">Afspraak Datum:</label></strong>
+            <strong><label for="date">Afspraak Datum:</label></strong><br>
             <input type="date" id="afspraak" name="afspraak" required><br><br>
 
-            <strong><label for="time">Afspraak Tijd:</label></strong>
+            <strong><label for="time">Afspraak Tijd:</label></strong><br>
             <input type="time" id="tijd" name="tijd" min="09:00" max="18:00" required><br><br>
 
             <strong><label for="geslacht">Geslacht:</label></strong><br>
