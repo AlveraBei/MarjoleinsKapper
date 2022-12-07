@@ -53,33 +53,26 @@ $date = date("Y-m-d");
         <table class="table table-bordered table-striped w3-center">
             <thead>
                 <tr>
-                    <th>Tijd</th>
-                    <th>Naam</th>
-                    <th>Email</th>
-                    <th>Telefoon</th>
-                    <th>Geslacht</th>
-                    <th>Notities</th>
-                    <th>wel of niet praten</th>
-                    <th>Annuleren</th>
+                    <th>id</th>
+                    <th>rol</th>
+                    <th>email</th>
+                    <th>kapperid</th>
+                    <th>verwijderen</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                 // pdo query select all from klanten
-                $stmt = $conn->prepare("SELECT * FROM `klanten`WHERE afspraak = '$date' ORDER BY tijd");
+                $stmt = $conn->prepare("SELECT * FROM `users`");
                 $stmt->execute();
                 $result = $stmt->fetchAll();
                 foreach ($result as $row) {
                     echo "</tr>" . "<br>";
-                    echo "<td>" . $row['tijd'] . "</td>";
-                    echo "<td>" . $row['naam'] . "</td>";
+                    echo "<td>" . $row['id'] . "</td>";
+                    echo "<td>" . $row['rol'] . "</td>";
                     echo "<td>" . $row['email'] . "</td>";
-                    echo "<td>" . $row['telefoon'] . "</td>";
-                    echo "<td>" . $row['geslacht'] . "</td>";
-                    echo "<td>" . $row['notities'] . "</td>";
-                    echo "<td>" . $row['praat'] . "</td>";
+                    echo "<td>" . $row['kapperid'] . "</td>";
                     echo "<td>" . "<a href='deleterow.php?id=" . $row['id'] . "' class='btn btn-danger'>╳</a>" . "</td>";
-
                     echo "</tr>" . "<br>";
                 }
                 ?>
