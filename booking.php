@@ -37,7 +37,7 @@ include("function.php");
         <form action=" add.php" method="post">
         <strong><label for="naam">kapsel:</label></strong><br>
 
-        <!-- <select name="beforethefact" id="cars">
+       <select name="beforethefact" id="cars">
             <option value="1">puntjes bijwerken - dames</option>
             <option value="2">kort haar - dames</option>
             <option value="3">middenlang haar (tot schouders) - dames</option>
@@ -53,7 +53,7 @@ include("function.php");
             <select name="afterthefact" id="cars">
                 <option value="9">wassen</option>
                 <option value="10">wassen & föhnen</option>
-            </select>   <br><br> -->
+            </select>   <br><br> 
             <strong><label for="naam">Voor en achternaam:</label></strong><br>
             <input type="text" id="naam" placeholder="Naam" name=" naam" required><br><br>
 

@@ -53,12 +53,12 @@ $date = date("Y-m-d");
         <table class="table table-bordered table-striped w3-center">
             <thead>
                 <tr>
-                    <th>id</th>
-                    <th>rol</th>
-                    <th>email</th>
-                    <th>kapperid</th>
-                    <th>edit</th>
-                    <th>verwijderen</th>
+                    <th>Naam</th>
+                    <th>Rol</th>
+                    <th>Email</th>
+                    <th>Kapperid</th>
+                    <th>Edit</th>
+                    <th>Verwijderen</th>
                 </tr>
             </thead>
             <tbody>
@@ -69,7 +69,7 @@ $date = date("Y-m-d");
                 $result = $stmt->fetchAll();
                 foreach ($result as $row) {
                     echo "</tr>" . "<br>";
-                    echo "<td>" . $row['id'] . "</td>";
+                    echo "<td>" . $row['naam'] . "</td>";
                     echo "<td>" . $row['rol'] . "</td>";
                     echo "<td>" . $row['email'] . "</td>";
                     echo "<td>" . $row['kapperid'] . "</td>";

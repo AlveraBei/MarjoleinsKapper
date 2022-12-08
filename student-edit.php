@@ -30,32 +30,30 @@ include("function.php");
                             $user_id = $_GET['id'];
 
                             $query = "SELECT * FROM users WHERE id=:user_id LIMIT 1";
-                            $statement = $conn->prepare($query);
-                            $data = [':users_id' => $user_id];
-                            $statement->execute($data);
+                            $stmt = $conn->prepare($query);
+                            $data = [':user_id' => $user_id];
+                            $stmt->execute($data);
 
-                            $result = $statement->fetch(PDO::FETCH_OBJ); //PDO::FETCH_ASSOC
+                            $result = $stmt->fetch(PDO::FETCH_OBJ); //PDO::FETCH_ASSOC
                         }
                         ?>
                         <form action="code.php" method="POST">
 
                             <input type="hidden" name="student_id" value="<?=$result->id?>" />
+                            <input type="hidden" name="fullname" value="<?= $result->rol; ?>" class="form-control" />
 
-                            <div class="mb-3">
-                                <label>Full Name</label>
-                                <input type="text" name="fullname" value="<?= $result->rol; ?>" class="form-control" />
-                            </div>
                             <div class="mb-3">
                                 <label>Email</label>
                                 <input type="text" name="email" value="<?= $result->email; ?>" class="form-control" />
                             </div>
+
                             <div class="mb-3">
-                                <label>Phone</label>
-                                <input type="text" name="phone" value="<?= $result->wachwoord; ?>" class="form-control" />
+                                <label>wachtwoord</label>
+                                <input type="text" name="phone" value="<?= $result->wachtwoord; ?>" class="form-control" />
                             </div>
                             <div class="mb-3">
-                                <label>Course</label>
-                                <input type="text" name="course" value="<?= $result->kapperid; ?>" class="form-control" />
+                                <label>kappersid</label>
+                                <input type="text" name="course" value="<?= $result->kapperid; ?>" class="form-control" readonly/>
                             </div>
                             <div class="mb-3">
                                 <button type="submit" name="update_student_btn" class="btn btn-primary">Update Student</button>
