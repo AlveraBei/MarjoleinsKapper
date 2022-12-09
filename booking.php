@@ -27,7 +27,7 @@ include("function.php");
         <a href="accountdashboard.php">account dashboard</a>
 
         <a href="logout.php">Log uit</a>
-        
+
     </div>
     <!-- END TOP NAV -->
 
@@ -35,25 +35,26 @@ include("function.php");
     <div class="w3-center w3-margin-top">
         <!-- START FORM -->
         <form action=" add.php" method="post">
-        <strong><label for="naam">kapsel:</label></strong><br>
+            <strong><label for="naam">kapsel:</label></strong><br>
 
-       <select name="beforethefact" id="cars">
-            <option value="1">puntjes bijwerken - dames</option>
-            <option value="2">kort haar - dames</option>
-            <option value="3">middenlang haar (tot schouders) - dames</option>
-            <option value="4">lang haar - dames</option>
-            <option value="5">kort haar - heren</option>
-            <option value="6">lang haar - heren</option>
-            <option value="7">kort haar & baard trimmen - heren</option>
-            <option value="8">lang haar & baard trimmen - heren</option>
-        </select>       
-        <br><br>
-        <strong><label for="naam">wassen en of föhnen</label></strong><br>
+            <select name="serviceKapper" id="serviceKapper">
+                <option value="puntjes bijwerken - dames">puntjes bijwerken - dames</option>
+                <option value="kort haar - dames">kort haar - dames</option>
+                <option value="middenlang haar (tot schouders) - dames">middenlang haar (tot schouders) - dames</option>
+                <option value="lang haar - dames">lang haar - dames</option>
+                <option value="kort haar - heren">kort haar - heren</option>
+                <option value="lang haar - heren">lang haar - heren</option>
+                <option value="kort haar & baard trimmen - heren">kort haar & baard trimmen - heren</option>
+                <option value="lang haar & baard trimmen - heren">lang haar & baard trimmen - heren</option>
+            </select>
+            <br><br>
+            <strong><label for="naam">wassen en of föhnen</label></strong><br>
 
-            <select name="afterthefact" id="cars">
-                <option value="9">wassen</option>
-                <option value="10">wassen & föhnen</option>
-            </select>   <br><br> 
+            <select name="serviceKappers" id="serviceKapper">
+                <option value="wassen">wassen</option>
+                <option value="wassen & föhnen">wassen & föhnen</option>
+            </select> <br><br>
+
             <strong><label for="naam">Voor en achternaam:</label></strong><br>
             <input type="text" id="naam" placeholder="Naam" name=" naam" required><br><br>
 
@@ -64,10 +65,7 @@ include("function.php");
             <input type="text" id="telefoon" value="+31" name="telefoon" required><br><br>
 
             <strong><label for="date">Afspraak Datum:</label></strong><br>
-            <input type="date" id="afspraak" name="afspraak" required><br><br>
-
-            <strong><label for="time">Afspraak Tijd:</label></strong><br>
-            <input type="time" id="tijd" name="tijd" min="09:00" max="18:00" required><br><br>
+            <input type="datetime-local" id="afspraak" name="afspraakdatum" min="09:00" max="18:00" required><br><br>
 
             <strong><label for="geslacht">Geslacht:</label></strong><br>
             <input type="radio" name="geslacht" value="Man" required> Man
@@ -83,7 +81,7 @@ include("function.php");
             <input type="radio" name="praat" value="Maakt niet uit" required> Maakt mij niks uit
             <br><br>
 
-            <input class="button" type="submit" value="Opslaan">
+            <input class="button" type="submit" name="submit" value="submit">
         </form>
     </div>
     <!-- END FORM -->

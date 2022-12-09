@@ -35,9 +35,6 @@ error_reporting(0);
         <a href="dashboard.php">Dashboard</a>
         <a href="booking.php">Afspraak Maken</a>
         <a class="active" href="kalender.php">Kalender</a>
-        <a href="accountmaken.php">accountmaken</a>
-        <a href="accountdashboard.php">account dashboard</a>
-
         <a href="logout.php">Log uit</a>
     </div>
     <!-- END TOP NAV -->

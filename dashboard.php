@@ -34,11 +34,7 @@ $date = date("Y-m-d");
         <a class="active" href="dashboard.php">Dashboard</a>
         <a href="booking.php">Afspraak Maken</a>
         <a href="kalender.php">Kalender</a>
-        <a href="accountmaken.php">accountmaken</a>
-        <a href="accountdashboard.php">account dashboard</a>
-
         <a href="logout.php">Log uit</a>
-
     </div>
     <!-- END TOP NAV -->
 
@@ -55,6 +51,7 @@ $date = date("Y-m-d");
         <table class="table table-bordered table-striped w3-center">
             <thead>
                 <tr>
+                    <th>Service</th>
                     <th>Tijd</th>
                     <th>Naam</th>
                     <th>Email</th>
@@ -62,24 +59,31 @@ $date = date("Y-m-d");
                     <th>Geslacht</th>
                     <th>Notities</th>
                     <th>wel of niet praten</th>
+                    <th>Edit</th>
                     <th>Annuleren</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                 // pdo query select all from klanten
-                $stmt = $conn->prepare("SELECT * FROM `klanten`WHERE afspraak = '$date' ORDER BY tijd");
+                $stmt = $conn->prepare("SELECT * FROM `afspraken` 
+                INNER JOIN `klanten` ON afspraken.klanten_id = klanten.id 
+                INNER JOIN `userkt` ON userkt.afspraak_id = afspraken.id
+                INNER JOIN `services` ON services.id = userkt.service_id
+               ");
                 $stmt->execute();
                 $result = $stmt->fetchAll();
                 foreach ($result as $row) {
                     echo "</tr>" . "<br>";
-                    echo "<td>" . $row['tijd'] . "</td>";
+                    echo "<td>" . $row['servicenaam'] . "</td>";
+                    echo "<td>" . $row['datum'] . "</td>";
                     echo "<td>" . $row['naam'] . "</td>";
                     echo "<td>" . $row['email'] . "</td>";
                     echo "<td>" . $row['telefoon'] . "</td>";
                     echo "<td>" . $row['geslacht'] . "</td>";
                     echo "<td>" . $row['notities'] . "</td>";
                     echo "<td>" . $row['praat'] . "</td>";
+                    echo "<td>" . "<a href='editrow.php?id=" . $row['id'] . "' class='btn btn-primary'>V</a>" . "</td>";
                     echo "<td>" . "<a href='deleterow.php?id=" . $row['id'] . "' class='btn btn-danger'>╳</a>" . "</td>";
 
                     echo "</tr>" . "<br>";
