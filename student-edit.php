@@ -49,11 +49,7 @@ include("function.php");
 
                             <div class="mb-3">
                                 <label>wachtwoord</label>
-                                <input type="text" name="phone" value="<?= $result->wachtwoord; ?>" class="form-control" />
-                            </div>
-                            <div class="mb-3">
-                                <label>kappersid</label>
-                                <input type="text" name="course" value="<?= $result->kapperid; ?>" class="form-control" readonly/>
+                                <input type="password" name="phone" value="<?= $result->wachtwoord; ?>" class="form-control" />
                             </div>
                             <div class="mb-3">
                                 <button type="submit" name="update_student_btn" class="btn btn-primary">Update Student</button>
