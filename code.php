@@ -27,11 +27,11 @@ if (isset($_POST['update_student_btn'])) {
 
         if ($query_execute) {
             $_SESSION['message'] = "Updated Successfully";
-            header('Location: index.php');
+            header('Location:index.php');
             exit(0);
         } else {
             $_SESSION['message'] = "Not Updated";
-            header('Location:/index.php');
+            header('Location:index.php');
             exit(0);
         }
     } catch (PDOException $e) {

@@ -15,7 +15,7 @@ try {
     VALUES ('$rol', '$naam', '$email','$wachtwoord', (SELECT MAX( kapperid ) FROM users c) +1)";
     $conn->exec($sql);
     echo "New record created successfully";
-    header("location:/accountdashboard.php");
+    header("location:accountdashboard.php");
 } catch (PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
 }
