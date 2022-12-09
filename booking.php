@@ -23,11 +23,9 @@ include("function.php");
         <a href="dashboard.php">Dashboard</a>
         <a class="active" href="booking.php">Afspraak Maken</a>
         <a href="kalender.php">Kalender</a>
-        <a href="accountmaken.php">accountmaken</a>
-        <a href="accountdashboard.php">account dashboard</a>
-
+        <a href="accountmaken.php">Account Maken</a>
+        <a href="accountdashboard.php">Account Dashboard</a>
         <a href="logout.php">Log uit</a>
-
     </div>
     <!-- END TOP NAV -->
 

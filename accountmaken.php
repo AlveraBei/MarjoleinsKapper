@@ -23,11 +23,9 @@ include("function.php");
         <a href="dashboard.php">Dashboard</a>
         <a href="booking.php">Afspraak Maken</a>
         <a href="kalender.php">Kalender</a>
-        <a class="active" href="accountmaken.php">accountmaken</a>
-        <a href="accountdashboard.php">account dashboard</a>
-
+        <a class="active" href="accountmaken.php">Account Maken</a>
+        <a href="accountdashboard.php">Account Dashboard</a>
         <a href="logout.php">Log uit</a>
-        
     </div>
     <!-- END TOP NAV -->
 
@@ -36,12 +34,12 @@ include("function.php");
         <!-- START FORM -->
         <form action="add-user.php" method="post">
 
-        <strong><label for="naam">gebruiker keuze</label></strong><br>
+            <strong><label for="naam">gebruiker keuze</label></strong><br>
 
             <select name="rol" id="rol">
                 <option value="admin">admin</option>
                 <option value="user">user</option>
-            </select>   <br><br> 
+            </select> <br><br>
 
             <strong><label for="naam">naam:</label></strong><br>
             <input type="text" id="naam" placeholder="Naam" name=" naam" required><br><br>
