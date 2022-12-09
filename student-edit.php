@@ -37,10 +37,12 @@ include("function.php");
                             $result = $stmt->fetch(PDO::FETCH_OBJ); //PDO::FETCH_ASSOC
                         }
                         ?>
+
+                        
                         <form action="code.php" method="POST">
 
-                            <input type="hidden" name="student_id" value="<?=$result->id?>" />
-                            <input type="hidden" name="fullname" value="<?= $result->rol; ?>" class="form-control" />
+                        <input type="hidden" name="user_id" value="<?=$result->id?>" />
+                        <input type="hidden" name="rol" value="<?= $result->rol; ?>" class="form-control" />
 
                             <div class="mb-3">
                                 <label>Email</label>
@@ -49,10 +51,10 @@ include("function.php");
 
                             <div class="mb-3">
                                 <label>wachtwoord</label>
-                                <input type="password" name="phone" value="<?= $result->wachtwoord; ?>" class="form-control" />
+                                <input type="password" name="wachtwoord" value="<?= $result->wachtwoord; ?>" class="form-control" />
                             </div>
                             <div class="mb-3">
-                                <button type="submit" name="update_student_btn" class="btn btn-primary">Update Student</button>
+                                <button type="submit" name="update_user" class="btn btn-primary">Update Student</button>
                             </div>
                         </form>
 
