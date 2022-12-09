@@ -22,7 +22,7 @@ include("function.php");
                 <div class="card">
                     <div class="card-header">
                         <h3>Bewerk & Update Gebruikers.
-                            <a href="accountdashboard.php" class="btn btn-danger float-end">BACK</a>
+                            <a href="dashboard.php" class="btn btn-danger float-end">BACK</a>
                         </h3>
                     </div>
                     <div class="card-body">

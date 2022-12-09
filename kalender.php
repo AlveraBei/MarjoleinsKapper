@@ -100,7 +100,7 @@ error_reporting(0);
                     echo "<td>" . $row['notities'] . "</td>";
                     echo "<td>" . $row['praat'] . "</td>";
                     echo "<td>" . "<a href='editrow.php?id=" . $row['id'] . "' class='btn btn-primary'>🅅</a>" . "</td>";
-                    echo "<td>" . "<a href='deleterow.php?id=" . $row['id'] . "' class='btn btn-danger'>🅇</a>" . "</td>";
+                    echo "<td>" . "<a href='afspraakdelete.php.php?id=" . $row['id'] . "' class='btn btn-danger'>🅇</a>" . "</td>";
                     echo "</tr>" . "<br>";
                 }
 
