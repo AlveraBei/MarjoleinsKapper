@@ -68,7 +68,7 @@ $date = date("Y-m-d");
                 $stmt->execute();
                 $result = $stmt->fetchAll();
                 foreach ($result as $row) {
-                    echo "</tr>" . "<br>";
+                    echo "<tr>";
                     echo "<td>" . $row['naam'] . "</td>";
                     echo "<td>" . $row['rol'] . "</td>";
                     echo "<td>" . $row['email'] . "</td>";

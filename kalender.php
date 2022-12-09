@@ -57,6 +57,9 @@ error_reporting(0);
         <table class="table table-bordered table-striped w3-center">
             <thead>
                 <tr>
+                    <th>prijs</th>
+                    <th>tijdsduur knippen</th>
+                    <th>Service</th>
                     <th>Tijd</th>
                     <th>Naam</th>
                     <th>Email</th>
@@ -64,6 +67,7 @@ error_reporting(0);
                     <th>Geslacht</th>
                     <th>Notities</th>
                     <th>wel of niet praten</th>
+                    <th>Edit</th>
                     <th>Annuleren</th>
                 </tr>
             </thead>
@@ -74,7 +78,7 @@ error_reporting(0);
                 $date = $_GET["datum"];
                 
 
-                $stmt = $conn->prepare("SELECT afspraken.datum, klanten.naam, klanten.email, klanten.telefoon, klanten.geslacht, klanten.notities, klanten.praat FROM `afspraken` 
+                $stmt = $conn->prepare("SELECT * FROM `afspraken` 
                 INNER JOIN `klanten` ON afspraken.klanten_id = klanten.id 
                 INNER JOIN `userkt` ON userkt.afspraak_id = afspraken.id
                 INNER JOIN `services` ON services.id = userkt.service_id
@@ -85,6 +89,9 @@ error_reporting(0);
                 $result = $stmt->fetchAll();
                 foreach ($result as $row) {
                     echo "</tr>" . "<br>";
+                    echo "<td>" ."€" . $row['serviceprijs'] . "</td>";
+                    echo "<td>" . $row['serviceduur'] . "</td>";
+                    echo "<td>" . $row['servicenaam'] . "</td>";
                     echo "<td>" . $row['datum'] . "</td>";
                     echo "<td>" . $row['naam'] . "</td>";
                     echo "<td>" . $row['email'] . "</td>";
@@ -92,6 +99,7 @@ error_reporting(0);
                     echo "<td>" . $row['geslacht'] . "</td>";
                     echo "<td>" . $row['notities'] . "</td>";
                     echo "<td>" . $row['praat'] . "</td>";
+                    echo "<td>" . "<a href='editrow.php?id=" . $row['id'] . "' class='btn btn-primary'>V</a>" . "</td>";
                     echo "<td>" . "<a href='deleterow.php?id=" . $row['id'] . "' class='btn btn-danger'>╳</a>" . "</td>";
                     echo "</tr>" . "<br>";
                 }

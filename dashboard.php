@@ -41,10 +41,10 @@ $date = date("Y-m-d");
     <!-- END TOP NAV -->
 
     <div class="w3-center">
-        <br><br>
+       
         <h1><strong>Goedemiddag, <?php echo $naam ?></strong></h1>
         <h3><?php echo date('d-m-y h:i:s'); ?></h3>
-        <br><br>
+        
         <h3>Afspraken voor <strong>vandaag:</strong></h3>
     </div>
 
@@ -54,6 +54,7 @@ $date = date("Y-m-d");
             <thead>
                 <tr>
                     <th>prijs</th>
+                    <th>tijdsduur knippen</th>
                     <th>Service</th>
                     <th>Tijd</th>
                     <th>Naam</th>
@@ -77,8 +78,9 @@ $date = date("Y-m-d");
                 $stmt->execute();
                 $result = $stmt->fetchAll();
                 foreach ($result as $row) {
-                    echo "</tr>" . "<br>";
+                    echo "</tr>" ;
                     echo "<td>" ."€" . $row['serviceprijs'] . "</td>";
+                    echo "<td>" . $row['serviceduur'] . "</td>";
                     echo "<td>" . $row['servicenaam'] . "</td>";
                     echo "<td>" . $row['datum'] . "</td>";
                     echo "<td>" . $row['naam'] . "</td>";
