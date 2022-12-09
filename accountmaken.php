@@ -32,7 +32,7 @@ include("function.php");
 
     <div class="w3-center w3-margin-top">
         <!-- START FORM -->
-        <form action="add-user.php" method="post">
+        <form action="add-user.php" method="POST">
 
             <strong><label for="naam">gebruiker keuze</label></strong><br>
 
@@ -50,7 +50,7 @@ include("function.php");
             <strong><label for="wachtwoord">wachtwoord:</label></strong><br>
             <input type="password" id="wachtwoord" name="wachtwoord" required><br><br>
 
-            <input class="button" type="submit" value="submit">
+            <input class="button" type="submit" name="submit " value="submit">
         </form>
     </div>
     <!-- END FORM -->
