@@ -41,10 +41,10 @@ $date = date("Y-m-d");
     <!-- END TOP NAV -->
 
     <div class="w3-center">
-       
+
         <h1><strong>Goedemiddag, <?php echo $naam ?></strong></h1>
         <h3><?php echo date('d-m-y h:i:s'); ?></h3>
-        
+
         <h3>Afspraken voor <strong>vandaag:</strong></h3>
     </div>
 
@@ -53,8 +53,8 @@ $date = date("Y-m-d");
         <table class="table table-bordered table-striped w3-center">
             <thead>
                 <tr>
-                    <th>prijs</th>
-                    <th>tijdsduur knippen</th>
+                    <th>Prijs</th>
+                    <th>Tijdsduur</th>
                     <th>Service</th>
                     <th>Tijd</th>
                     <th>Naam</th>
@@ -62,8 +62,8 @@ $date = date("Y-m-d");
                     <th>Telefoon</th>
                     <th>Geslacht</th>
                     <th>Notities</th>
-                    <th>wel of niet praten</th>
-                    <th>Edit</th>
+                    <th>Wel of niet praten</th>
+                    <th>Wijzigen</th>
                     <th>Annuleren</th>
                 </tr>
             </thead>
@@ -78,8 +78,8 @@ $date = date("Y-m-d");
                 $stmt->execute();
                 $result = $stmt->fetchAll();
                 foreach ($result as $row) {
-                    echo "</tr>" ;
-                    echo "<td>" ."€" . $row['serviceprijs'] . "</td>";
+                    echo "</tr>";
+                    echo "<td>" . "€" . $row['serviceprijs'] . "</td>";
                     echo "<td>" . $row['serviceduur'] . "</td>";
                     echo "<td>" . $row['servicenaam'] . "</td>";
                     echo "<td>" . $row['datum'] . "</td>";
@@ -89,8 +89,8 @@ $date = date("Y-m-d");
                     echo "<td>" . $row['geslacht'] . "</td>";
                     echo "<td>" . $row['notities'] . "</td>";
                     echo "<td>" . $row['praat'] . "</td>";
-                    echo "<td>" . "<a href='editrow.php?id=" . $row['id'] . "' class='btn btn-primary'>V</a>" . "</td>";
-                    echo "<td>" . "<a href='deleterow.php?id=" . $row['id'] . "' class='btn btn-danger'>╳</a>" . "</td>";
+                    echo "<td>" . "<a href='afspraakedit.php?id=" . $row['id'] . "' class='btn btn-primary'>🅅</a>" . "</td>";
+                    echo "<td>" . "<a href='deleterow.php?id=" . $row['id'] . "' class='btn btn-danger'>🅇</a>" . "</td>";
 
                     echo "</tr>" . "<br>";
                 }

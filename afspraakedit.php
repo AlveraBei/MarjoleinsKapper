@@ -11,7 +11,7 @@ include("function.php");
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <title>Edit & Update data into database using PHP PDO</title>
+    <title>Edit Accounts</title>
 </head>
 
 <body>
@@ -21,7 +21,7 @@ include("function.php");
             <div class="col-md-8 mt-4">
                 <div class="card">
                     <div class="card-header">
-                        <h3>Edit & Update data into database using PDO in PHP
+                        <h3>Bewerk & Update Gebruikers.
                             <a href="accountdashboard.php" class="btn btn-danger float-end">BACK</a>
                         </h3>
                     </div>
@@ -38,9 +38,12 @@ include("function.php");
                             $result = $stmt->fetch(PDO::FETCH_OBJ); //PDO::FETCH_ASSOC
                         }
                         ?>
-                        <form action="editaccountcode.php" method="POST">
-                            <input type="hidden" name="student_id" value="<?= $result->id ?>" />
-                            <input type="hidden" name="fullname" value="<?= $result->rol; ?>" class="form-control" />
+
+
+                        <form action="usereditcode.php" method="POST">
+
+                            <input type="hidden" name="user_id" value="<?= $result->id ?>" />
+                            <input type="hidden" name="rol" value="<?= $result->rol; ?>" class="form-control" />
 
                             <div class="mb-3">
                                 <label>Email</label>
@@ -48,15 +51,11 @@ include("function.php");
                             </div>
 
                             <div class="mb-3">
-                                <label>wachtwoord</label>
-                                <input type="text" name="phone" value="<?= $result->wachtwoord; ?>" class="form-control" />
+                                <label>Wachtwoord</label>
+                                <input type="password" name="wachtwoord" value="<?= $result->wachtwoord; ?>" class="form-control" />
                             </div>
                             <div class="mb-3">
-                                <label>kappersid</label>
-                                <input type="text" name="course" value="<?= $result->kapperid; ?>" class="form-control" readonly />
-                            </div>
-                            <div class="mb-3">
-                                <button type="submit" name="update_student_btn" class="btn btn-primary">Update Student</button>
+                                <button type="submit" name="update_user" class="btn btn-primary">Update Student</button>
                             </div>
                         </form>
 

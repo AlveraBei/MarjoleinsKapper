@@ -57,8 +57,8 @@ error_reporting(0);
         <table class="table table-bordered table-striped w3-center">
             <thead>
                 <tr>
-                    <th>prijs</th>
-                    <th>tijdsduur knippen</th>
+                    <th>Prijs</th>
+                    <th>Tijdsduur</th>
                     <th>Service</th>
                     <th>Tijd</th>
                     <th>Naam</th>
@@ -66,17 +66,17 @@ error_reporting(0);
                     <th>Telefoon</th>
                     <th>Geslacht</th>
                     <th>Notities</th>
-                    <th>wel of niet praten</th>
-                    <th>Edit</th>
+                    <th>Wel of niet praten</th>
+                    <th>Wijzigen</th>
                     <th>Annuleren</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                
+
                 // pdo query select all from klanten
                 $date = $_GET["datum"];
-                
+
 
                 $stmt = $conn->prepare("SELECT * FROM `afspraken` 
                 INNER JOIN `klanten` ON afspraken.klanten_id = klanten.id 
@@ -89,7 +89,7 @@ error_reporting(0);
                 $result = $stmt->fetchAll();
                 foreach ($result as $row) {
                     echo "</tr>" . "<br>";
-                    echo "<td>" ."€" . $row['serviceprijs'] . "</td>";
+                    echo "<td>" . "€" . $row['serviceprijs'] . "</td>";
                     echo "<td>" . $row['serviceduur'] . "</td>";
                     echo "<td>" . $row['servicenaam'] . "</td>";
                     echo "<td>" . $row['datum'] . "</td>";
@@ -99,11 +99,11 @@ error_reporting(0);
                     echo "<td>" . $row['geslacht'] . "</td>";
                     echo "<td>" . $row['notities'] . "</td>";
                     echo "<td>" . $row['praat'] . "</td>";
-                    echo "<td>" . "<a href='editrow.php?id=" . $row['id'] . "' class='btn btn-primary'>V</a>" . "</td>";
-                    echo "<td>" . "<a href='deleterow.php?id=" . $row['id'] . "' class='btn btn-danger'>╳</a>" . "</td>";
+                    echo "<td>" . "<a href='editrow.php?id=" . $row['id'] . "' class='btn btn-primary'>🅅</a>" . "</td>";
+                    echo "<td>" . "<a href='deleterow.php?id=" . $row['id'] . "' class='btn btn-danger'>🅇</a>" . "</td>";
                     echo "</tr>" . "<br>";
                 }
-               
+
                 ?>
             </tbody>
         </table>
