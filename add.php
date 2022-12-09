@@ -57,6 +57,6 @@ if (isset($_POST['submit'])) {
     VALUES ('$afspraak_id', '$medewerker_id',  '$serviceKapperid')";
     $conn->exec($sql);
 
-    header("location:/dashboard.php");
+    header("location:dashboard.php");
     exit();
 }
