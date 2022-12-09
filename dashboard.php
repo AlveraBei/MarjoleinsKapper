@@ -74,6 +74,8 @@ $date = date("Y-m-d");
                 INNER JOIN `klanten` ON afspraken.klanten_id = klanten.id 
                 INNER JOIN `userkt` ON userkt.afspraak_id = afspraken.id
                 INNER JOIN `services` ON services.id = userkt.service_id
+                WHERE datum >= '$date'
+                AND datum <'$date' + INTERVAL 1 day
                ");
                 $stmt->execute();
                 $result = $stmt->fetchAll();
