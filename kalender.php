@@ -69,14 +69,18 @@ error_reporting(0);
             </thead>
             <tbody>
                 <?php
+                
                 // pdo query select all from klanten
                 $datum = $_GET["datum"];
-                $stmt = $conn->prepare("SELECT * FROM `klanten`WHERE afspraak = '$datum' ORDER BY tijd");
+                print_r($datum);
+                $stmt = $conn->prepare("SELECT * FROM `afspraken`WHERE $datum ");
+
+                
                 $stmt->execute();
                 $result = $stmt->fetchAll();
                 foreach ($result as $row) {
                     echo "</tr>" . "<br>";
-                    echo "<td>" . $row['tijd'] . "</td>";
+                    echo "<td>" . $row['datum'] . "</td>";
                     echo "<td>" . $row['naam'] . "</td>";
                     echo "<td>" . $row['email'] . "</td>";
                     echo "<td>" . $row['telefoon'] . "</td>";
@@ -86,6 +90,7 @@ error_reporting(0);
                     echo "<td>" . "<a href='deleterow.php?id=" . $row['id'] . "' class='btn btn-danger'>╳</a>" . "</td>";
                     echo "</tr>" . "<br>";
                 }
+               
                 ?>
             </tbody>
         </table>
