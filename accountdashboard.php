@@ -72,7 +72,7 @@ $date = date("Y-m-d");
                     echo "<td>" . $row['naam'] . "</td>";
                     echo "<td>" . $row['rol'] . "</td>";
                     echo "<td>" . $row['email'] . "</td>";
-                    echo "<td>" . "<a href='student-edit.php?id=" . $row['id'] . "' class='btn btn-primary'>╳</a>" . "</td>";
+                    echo "<td>" . "<a href='useredit.php?id=" . $row['id'] . "' class='btn btn-primary'>╳</a>" . "</td>";
                     echo "<td>" . "<a href='deleterow.php?id=" . $row['id'] . "' class='btn btn-danger'>╳</a>" . "</td>";
                     echo "</tr>" . "<br>";
                 }
