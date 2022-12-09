@@ -31,7 +31,7 @@ $date = date("Y-m-d");
 
     <!-- START TOP NAV -->
     <div class="topnav">
-        <a  href="dashboard.php">Dashboard</a>
+        <a href="dashboard.php">Dashboard</a>
         <a href="booking.php">Afspraak Maken</a>
         <a href="kalender.php">Kalender</a>
         <a href="accountmaken.php">account maken</a>
