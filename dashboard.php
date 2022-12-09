@@ -53,6 +53,7 @@ $date = date("Y-m-d");
         <table class="table table-bordered table-striped w3-center">
             <thead>
                 <tr>
+                    <th>prijs</th>
                     <th>Service</th>
                     <th>Tijd</th>
                     <th>Naam</th>
@@ -77,6 +78,7 @@ $date = date("Y-m-d");
                 $result = $stmt->fetchAll();
                 foreach ($result as $row) {
                     echo "</tr>" . "<br>";
+                    echo "<td>" ."€" . $row['serviceprijs'] . "</td>";
                     echo "<td>" . $row['servicenaam'] . "</td>";
                     echo "<td>" . $row['datum'] . "</td>";
                     echo "<td>" . $row['naam'] . "</td>";
