@@ -12,7 +12,10 @@ if (isset($_SESSION['admin_id'])) {
     $row = $select->fetch(PDO::FETCH_ASSOC);
     $naam = $row['naam'];
 }
-$date = date("Y-m-d");
+
+// $date = date("Y-m-d");
+
+
 error_reporting(0);
 ?>
 
@@ -75,9 +78,12 @@ error_reporting(0);
                 <?php
 
                 // pdo query select all from klanten
-                $date = $_GET["datum"];
-
-
+                // $date = $_GET["datum"];
+                if ($date == $_GET["datum"]) {
+                    $date = date("Y-m-d");
+                } else {
+                    $date = $_GET["datum"];
+                }
                 $stmt = $conn->prepare("SELECT * FROM `afspraken` 
                 INNER JOIN `klanten` ON afspraken.klanten_id = klanten.id 
                 INNER JOIN `userkt` ON userkt.afspraak_id = afspraken.id
@@ -85,6 +91,8 @@ error_reporting(0);
                 WHERE datum >= '$date'
                 AND datum <'$date' + INTERVAL 1 day
                 ");
+
+
                 $stmt->execute();
                 $result = $stmt->fetchAll();
                 foreach ($result as $row) {
