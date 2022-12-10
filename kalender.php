@@ -89,8 +89,7 @@ error_reporting(0);
                 JOIN `userkt` ON userkt.afspraak_id = afspraken.afspraak_id
                 JOIN `services` ON services.id = userkt.service_id
                 WHERE datum >= '$date'
-                AND datum <'$date' + INTERVAL 1 day
-                ");
+                AND datum <'$date' + INTERVAL 1 DAY ");
                 $stmt->execute();
                 $result = $stmt->fetchAll();
                 foreach ($result as $row) {
