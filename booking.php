@@ -48,19 +48,13 @@ include("function.php");
             <br><br>
             <strong><label for="naam">wassen en of föhnen</label></strong><br>
 
-            <select name="serviceKappers" id="serviceKapper">
+            <select name="servicescategorie" id="serviceKapper">
                 <option value="NULL">geen</option>
                 <option value="wassen">wassen</option>
                 <option value="föhnen">föhnen</option>
                 <option value="wassen & föhnen">wassen & föhnen</option>
             </select> <br><br>
 
-            <strong><label for="naam">overig</label></strong><br>
-
-            <select name="overig" id="overig">
-                <option value="NULL">geen</option>
-                <option value="baard trimmen">baard trimmen</option>
-            </select><br><br>
 
             <strong><label for="naam">Voor en achternaam:</label></strong><br>
             <input type="text" id="naam" placeholder="Naam" name=" naam" required><br><br>

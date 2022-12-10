@@ -63,6 +63,19 @@ include 'function.php';
                                 </select>
                             </div>
 
+                            <div class="mb-3">
+                                <select name="servic" id="serviceKapper">
+                                    <option value="21">puntjes bijwerken - dames</option>
+                                    <option value="22">kort haar - dames</option>
+                                    <option value="23">middenlang haar (totschouders) - dames</option>
+                                    <option value="24">lang haar - dames</option>
+                                    <option value="25">kort haar - heren</option>
+                                    <option value="26">lang haar - heren</option>
+                                    <option value="27">kort haar & baard trimmen - heren</option>
+                                    <option value="28">lang haar & baard trimmen - heren</option>
+                                </select>
+                            </div>
+
 
                             <div class="mb-3">
                                 <button type="submit" name="updateafspraak" class="btn btn-primary">update afspraak</button>

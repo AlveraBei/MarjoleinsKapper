@@ -11,6 +11,8 @@ $notites = $_POST['notities'];
 $praat = $_POST['praat'];
 $afspraakdatum = $_POST['afspraakdatum'];
 $serviceKapper = $_POST['serviceKapper'];
+$servicescategorie = $_POST['servicescategorie'];
+
 
 // print($serviceKapper);
 

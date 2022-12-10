@@ -56,6 +56,7 @@ $date = date('Y-m-d');
                     <th>Prijs</th>
                     <th>Tijdsduur</th>
                     <th>Service</th>
+                    <th>categorienaam</th>
                     <th>Tijd</th>
                     <th>Naam</th>
                     <th>Email</th>
@@ -74,6 +75,7 @@ $date = date('Y-m-d');
                 INNER JOIN `klanten` ON afspraken.klanten_id = klanten.id 
                 INNER JOIN `userkt` ON userkt.afspraak_id = afspraken.afspraak_id
                 INNER JOIN `services` ON services.id = userkt.service_id
+                INNER JOIN `servicescategorie` ON servicescategorie_id = servicescategorie
                 WHERE datum >= '$date'
                 AND datum <'$date' + INTERVAL 1 day
                ");
@@ -84,6 +86,7 @@ $date = date('Y-m-d');
                     echo '<td>' . '€' . $row['serviceprijs'] . '</td>';
                     echo '<td>' . $row['serviceduur'] . '</td>';
                     echo '<td>' . $row['servicenaam'] . '</td>';
+                    echo '<td>' . $row['categorienaam'] . '</td>';
                     echo '<td>' . $row['datum'] . '</td>';
                     echo '<td>' . $row['naam'] . '</td>';
                     echo '<td>' . $row['email'] . '</td>';
