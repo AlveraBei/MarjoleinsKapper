@@ -49,35 +49,26 @@ include 'function.php';
                                 <input type="datetime-local" name="datum" value="<?= $row->datum ?>"
                                     class="form-control" />
                             </div>
+
                             <div class="mb-3">
-                                <button type="submit" name="updateafspraak" class="btn btn-primary">Update Student</button>
+                                <select name="serviceKapper" id="serviceKapper">
+                                    <option value="21">puntjes bijwerken - dames</option>
+                                    <option value="22">kort haar - dames</option>
+                                    <option value="23">middenlang haar (totschouders) - dames</option>
+                                    <option value="24">lang haar - dames</option>
+                                    <option value="25">kort haar - heren</option>
+                                    <option value="26">lang haar - heren</option>
+                                    <option value="27">kort haar & baard trimmen - heren</option>
+                                    <option value="28">lang haar & baard trimmen - heren</option>
+                                </select>
                             </div>
 
- 
-                            <?php 
-                            //     if (isset($_GET['id'])) {
-                            //     $id = $_GET['id'];
-                            //     $datum = $_POST['datum'];
-                            //     $update = $conn->prepare("UPDATE `afspraken` SET `datum` = $datum WHERE `afspraken`.`afspraak_id` = $id");
-                            //     $update->bindParam('s', $datum);
-                            //     $update->execute();
-                            //     // header("location:dashboard.php");
-                            //     print_r($_GET);
-                            // } 
 
-                            //if isset $_get id then update date in datum in database
-                            // if (isset($_GET['id'])) {
-                            //     $afspraak_id = $_GET['id'];
-                            //     $datum = $_POST['datum'];
-                        
-                                
-                            //     $update = $conn->prepare("UPDATE `afspraken` SET `datum` = $datum WHERE `afspraak_id` = $afspraak_id");
-                            //     $update->bindParam('s', $datum);
-                            //     $update->execute();
-                            //     header("location:dashboard.php");
-                            //     print_r($_GET);
-                            // }
-                            ?>
+                            <div class="mb-3">
+                                <button type="submit" name="updateafspraak" class="btn btn-primary">update afspraak</button>
+                            </div>
+
+
                         </form>
 
                     </div>

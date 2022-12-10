@@ -15,8 +15,14 @@ if (isset($_POST['updateafspraak'])) {
 
     $update = "UPDATE afspraken SET datum= '$datum' WHERE afspraak_id = '$id'";
     $stmt = $conn->prepare($update);
-    // $data = [':datum' => $datum, ':afspraak_id' => $id];
     $stmt->execute();
+
+
+    $serviceKapper = $_POST['serviceKapper'];
+    $update = "UPDATE userkt SET service_id= '$serviceKapper' WHERE afspraak_id = '$id'";
+    $stmt = $conn->prepare($update);
+    $stmt->execute();
+
     if ($stmt->rowCount()) {
         $_SESSION['success'] = "Afspraak Successfully Updated";
         header("location:dashboard.php");
