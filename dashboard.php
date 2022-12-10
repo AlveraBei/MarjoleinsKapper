@@ -72,7 +72,7 @@ $date = date("Y-m-d");
                 // pdo query select all from klanten
                 $stmt = $conn->prepare("SELECT * FROM `afspraken` 
                 INNER JOIN `klanten` ON afspraken.klanten_id = klanten.id 
-                INNER JOIN `userkt` ON userkt.afspraak_id = afspraken.id
+                INNER JOIN `userkt` ON userkt.afspraak_id = afspraken.afspraak_id
                 INNER JOIN `services` ON services.id = userkt.service_id
                 WHERE datum >= '$date'
                 AND datum <'$date' + INTERVAL 1 day
@@ -91,8 +91,8 @@ $date = date("Y-m-d");
                     echo "<td>" . $row['geslacht'] . "</td>";
                     echo "<td>" . $row['notities'] . "</td>";
                     echo "<td>" . $row['praat'] . "</td>";
-                    echo "<td>" . "<a href='afspraakedit.php?id=" . $row['id'] . "' class='btn btn-primary'>🅅</a>" . "</td>";
-                    echo "<td>" . "<a href='afspraakdelete.php?id=" . $row['id'] . "' class='btn btn-danger'>🅇</a>" . "</td>";
+                    echo "<td>" . "<a href='afspraakedit.php?id=" . $row['afspraak_id'] . "' class='btn btn-primary'>🅅</a>" . "</td>";
+                    echo "<td>" . "<a href='afspraakdelete.php?id=" . $row['afspraak_id'] . "' class='btn btn-danger'>🅇</a>" . "</td>";
 
                     echo "</tr>" . "<br>";
                 }
