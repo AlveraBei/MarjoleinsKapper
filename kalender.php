@@ -85,14 +85,12 @@ error_reporting(0);
                     $date = $_GET["datum"];
                 }
                 $stmt = $conn->prepare("SELECT * FROM `afspraken` 
-                INNER JOIN `klanten` ON afspraken.klanten_id = klanten.id 
-                INNER JOIN `userkt` ON userkt.afspraak_id = afspraken.id
-                INNER JOIN `services` ON services.id = userkt.service_id
+                JOIN `klanten` ON afspraken.klanten_id = klanten.id 
+                JOIN `userkt` ON userkt.afspraak_id = afspraken.afspraak_id
+                JOIN `services` ON services.id = userkt.service_id
                 WHERE datum >= '$date'
                 AND datum <'$date' + INTERVAL 1 day
                 ");
-
-
                 $stmt->execute();
                 $result = $stmt->fetchAll();
                 foreach ($result as $row) {

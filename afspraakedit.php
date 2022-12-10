@@ -1,7 +1,7 @@
 <?php
 session_start();
-include("db.php");
-include("function.php");
+include 'db.php';
+include 'function.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -26,37 +26,58 @@ include("function.php");
                         </h3>
                     </div>
                     <div class="card-body">
-                        <?php
-                        if (isset($_GET['id'])) {
-                            $user_id = $_GET['id'];
-
-                            $query = "SELECT * FROM users WHERE id=:user_id LIMIT 1";
-                            $stmt = $conn->prepare($query);
-                            $data = [':user_id' => $user_id];
-                            $stmt->execute($data);
-
-                            $result = $stmt->fetch(PDO::FETCH_OBJ); //PDO::FETCH_ASSOC
-                        }
-                        ?>
 
 
-                        <form action="usereditcode.php" method="POST">
 
-                            <input type="hidden" name="user_id" value="<?= $result->id ?>" />
-                            <input type="hidden" name="rol" value="<?= $result->rol; ?>" class="form-control" />
+                        <form action="afspraakeditcode.php" method="POST">
+                            <?php
+                            // pdo query select all from klanten
+                            $stmt = $conn->prepare("SELECT * FROM `afspraken` 
+                            INNER JOIN `klanten` ON afspraken.klanten_id = klanten.id 
+                            INNER JOIN `userkt` ON userkt.afspraak_id = afspraken.afspraak_id
+                            INNER JOIN `services` ON services.id = userkt.service_id");
+                            $stmt->execute();
+                            $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+                            foreach ($result as $row) {
+                            }
+                            ?>
+
 
                             <div class="mb-3">
-                                <label>Email</label>
-                                <input type="text" name="email" value="<?= $result->email; ?>" class="form-control" />
+                                <label>datum</label>
+                                <input type="hidden" name="id" value="<?= $row->afspraak_id ?>" />
+                                <input type="datetime-local" name="datum" value="<?= $row->datum ?>"
+                                    class="form-control" />
+                            </div>
+                            <div class="mb-3">
+                                <button type="submit" name="updateafspraak" class="btn btn-primary">Update Student</button>
                             </div>
 
-                            <div class="mb-3">
-                                <label>Wachtwoord</label>
-                                <input type="password" name="wachtwoord" value="<?= $result->wachtwoord; ?>" class="form-control" />
-                            </div>
-                            <div class="mb-3">
-                                <button type="submit" name="update_user" class="btn btn-primary">Update Student</button>
-                            </div>
+ 
+                            <?php 
+                            //     if (isset($_GET['id'])) {
+                            //     $id = $_GET['id'];
+                            //     $datum = $_POST['datum'];
+                            //     $update = $conn->prepare("UPDATE `afspraken` SET `datum` = $datum WHERE `afspraken`.`afspraak_id` = $id");
+                            //     $update->bindParam('s', $datum);
+                            //     $update->execute();
+                            //     // header("location:dashboard.php");
+                            //     print_r($_GET);
+                            // } 
+
+                            //if isset $_get id then update date in datum in database
+                            // if (isset($_GET['id'])) {
+                            //     $afspraak_id = $_GET['id'];
+                            //     $datum = $_POST['datum'];
+                        
+                                
+                            //     $update = $conn->prepare("UPDATE `afspraken` SET `datum` = $datum WHERE `afspraak_id` = $afspraak_id");
+                            //     $update->bindParam('s', $datum);
+                            //     $update->execute();
+                            //     header("location:dashboard.php");
+                            //     print_r($_GET);
+                            // }
+                            ?>
                         </form>
 
                     </div>
@@ -64,7 +85,6 @@ include("function.php");
             </div>
         </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

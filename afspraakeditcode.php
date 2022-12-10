@@ -5,17 +5,24 @@ include("function.php");
 
 
 // if isset post update_user update users in database pdo
-if (isset($_POST['update_user'])) {
-    $user_id = $_POST['user_id'];
-    $rol = $_POST['rol'];
-    $email = $_POST['email'];
-    $wachtwoord = $_POST['wachtwoord'];
-    $query = "UPDATE users SET rol=:rol, email=:email, wachtwoord=:wachtwoord WHERE id=:user_id";
-    $stmt = $conn->prepare($query);
-    $data = [':rol' => $rol, ':email' => $email, ':wachtwoord' => $wachtwoord, ':user_id' => $user_id];
-    $stmt->execute($data);
+
+if (isset($_POST['updateafspraak'])) {
+    $id = $_POST['id'];
+    $datum = $_POST['datum'];
+    // print($datum);
+    // print"\n";
+    // print($id);
+
+    $update = "UPDATE afspraken SET datum= '$datum' WHERE afspraak_id = '$id'";
+    $stmt = $conn->prepare($update);
+    // $data = [':datum' => $datum, ':afspraak_id' => $id];
+    $stmt->execute();
     if ($stmt->rowCount()) {
         $_SESSION['success'] = "Afspraak Successfully Updated";
         header("location:dashboard.php");
+        
     }
 }
+
+
+?>
