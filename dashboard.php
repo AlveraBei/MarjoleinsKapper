@@ -92,7 +92,7 @@ $date = date("Y-m-d");
                     echo "<td>" . $row['notities'] . "</td>";
                     echo "<td>" . $row['praat'] . "</td>";
                     echo "<td>" . "<a href='afspraakedit.php?id=" . $row['id'] . "' class='btn btn-primary'>🅅</a>" . "</td>";
-                    echo "<td>" . "<a href='deleterow.php?id=" . $row['id'] . "' class='btn btn-danger'>🅇</a>" . "</td>";
+                    echo "<td>" . "<a href='afspraakdelete.php?id=" . $row['id'] . "' class='btn btn-danger'>🅇</a>" . "</td>";
 
                     echo "</tr>" . "<br>";
                 }
