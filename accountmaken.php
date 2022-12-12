@@ -34,7 +34,7 @@ include("function.php");
         <!-- START FORM -->
         <form action="add-user.php" method="POST">
 
-            <strong><label for="naam">gebruiker keuze</label></strong><br>
+            <strong><label for="naam">Gebruiker keuze</label></strong><br>
 
             <select name="rol" id="rol">
                 <option value="admin">admin</option>
