@@ -11,6 +11,7 @@ if (isset($_SESSION['admin_id'])) {
     $select->execute([$admin_id]);
     $row = $select->fetch(PDO::FETCH_ASSOC);
     $naam = $row['naam'];
+    $id = $row['id'];
 }
 $date = date("Y-m-d");
 ?>
@@ -45,7 +46,7 @@ $date = date("Y-m-d");
         <h1><strong>Goedemiddag, <?php echo $naam ?></strong></h1>
         <h3><?php echo date('d-m-y h:i:s'); ?></h3>
         <br><br>
-        <h3>Afspraken voor <strong>vandaag:</strong></h3>
+        <h3>Huidige gebruikers:</h3>
     </div>
 
     <div>
@@ -63,8 +64,12 @@ $date = date("Y-m-d");
             </thead>
             <tbody>
                 <?php
-                // pdo query select all from klanten
-                $stmt = $conn->prepare("SELECT * FROM `users`");
+
+
+
+
+                // pdo query select all from users
+                $stmt = $conn->prepare("SELECT * FROM `users` WHERE `id` != $id");
                 $stmt->execute();
                 $result = $stmt->fetchAll();
                 foreach ($result as $row) {
