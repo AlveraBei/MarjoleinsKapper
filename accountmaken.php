@@ -41,13 +41,13 @@ include("function.php");
                 <option value="user">user</option>
             </select> <br><br>
 
-            <strong><label for="naam">naam:</label></strong><br>
+            <strong><label for="naam">Naam:</label></strong><br>
             <input type="text" id="naam" placeholder="Naam" name=" naam" required><br><br>
 
             <strong><label for="email">Email:</label></strong><br>
             <input type="email" id="email" placeholder="Email" name="email" required><br><br>
 
-            <strong><label for="wachtwoord">wachtwoord:</label></strong><br>
+            <strong><label for="wachtwoord">Wachtwoord:</label></strong><br>
             <input type="password" id="wachtwoord" name="wachtwoord" required><br><br>
 
             <input class="button" type="submit" name="submit " value="submit">
