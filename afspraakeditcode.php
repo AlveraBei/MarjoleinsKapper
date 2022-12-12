@@ -9,9 +9,11 @@ include("function.php");
 if (isset($_POST['updateafspraak'])) {
     $id = $_POST['id'];
     $datum = $_POST['datum'];
-    $servic = $_POST['servic'];
+    $service = $_POST['service'];
     $serviceKapper = $_POST['serviceKapper'];
-    print_r($servic);
+    print_r($service);
+   
+
 
     $update = "UPDATE afspraken SET datum= '$datum' WHERE afspraak_id = '$id'";
     $stmt = $conn->prepare($update);
@@ -24,13 +26,14 @@ if (isset($_POST['updateafspraak'])) {
     $stmt->execute();
 
     
-    $update = "UPDATE services SET servicescategorie= '$servic' WHERE servicescategorie_id = '$id'";
+    $update = "UPDATE services SET servicescategorie= '$service' WHERE services.id = '$id'";
     $stmt = $conn->prepare($update);
     $stmt->execute();
 
+
     if ($stmt->rowCount()) {
         $_SESSION['success'] = "Afspraak Successfully Updated";
-        // header("location:dashboard.php");
+        header("location:dashboard.php");
         
     }
 }

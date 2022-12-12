@@ -66,7 +66,7 @@ include 'function.php';
                             </div>
 
                             <div class="mb-3">
-                                <select name="servic" id="servic">
+                                <select name="service" id="service">
                                     <option value="NULL">geen</option>
                                     <option value="7">wassen</option>
                                     <option value="8">föhnen</option>
