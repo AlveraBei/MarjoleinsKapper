@@ -9,23 +9,28 @@ include("function.php");
 if (isset($_POST['updateafspraak'])) {
     $id = $_POST['id'];
     $datum = $_POST['datum'];
-    // print($datum);
-    // print"\n";
-    // print($id);
+    $servic = $_POST['servic'];
+    $serviceKapper = $_POST['serviceKapper'];
+    print_r($servic);
 
     $update = "UPDATE afspraken SET datum= '$datum' WHERE afspraak_id = '$id'";
     $stmt = $conn->prepare($update);
     $stmt->execute();
 
 
-    $serviceKapper = $_POST['serviceKapper'];
+
     $update = "UPDATE userkt SET service_id= '$serviceKapper' WHERE afspraak_id = '$id'";
+    $stmt = $conn->prepare($update);
+    $stmt->execute();
+
+    
+    $update = "UPDATE services SET servicescategorie= '$servic' WHERE servicescategorie_id = '$id'";
     $stmt = $conn->prepare($update);
     $stmt->execute();
 
     if ($stmt->rowCount()) {
         $_SESSION['success'] = "Afspraak Successfully Updated";
-        header("location:dashboard.php");
+        // header("location:dashboard.php");
         
     }
 }

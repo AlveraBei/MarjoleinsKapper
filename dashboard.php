@@ -83,8 +83,8 @@ $date = date('Y-m-d');
                 $result = $stmt->fetchAll();
                 foreach ($result as $row) {
                     echo '</tr>';
-                    echo '<td>' . '€' . $row['serviceprijs'] . '</td>';
-                    echo '<td>' . $row['serviceduur'] . '</td>';
+                    echo '<td>' . '€' . $row['serviceprijs'] + $row['categorieprijs'] . '</td>';
+                    echo '<td>' . $row['serviceduur'] + $row['categorieduur']  . '</td>';
                     echo '<td>' . $row['servicenaam'] . '</td>';
                     echo '<td>' . $row['categorienaam'] . '</td>';
                     echo '<td>' . $row['datum'] . '</td>';
