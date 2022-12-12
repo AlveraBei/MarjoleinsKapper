@@ -46,7 +46,7 @@ $date = date("Y-m-d");
         <h1><strong>Goedemiddag, <?php echo $naam ?></strong></h1>
         <h3><?php echo date('d-m-y h:i:s'); ?></h3>
         <br><br>
-        <h3>Huidige gebruikers:</h3>
+        <h3>Huidige medewerkers:</h3>
     </div>
 
     <div>
