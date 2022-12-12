@@ -59,6 +59,12 @@ if (isset($_POST['submit'])) {
     VALUES ('$afspraak_id', '$medewerker_id',  '$serviceKapperid')";
     $conn->exec($sql);
 
+
+    $sql = "INSERT INTO `services` (`servicescategorie`)
+    VALUES ('$servicescategorie')";
+    $conn->exec($sql);
+
+    print_r($servicescategorie);
     header("location:dashboard.php");
     exit();
 }

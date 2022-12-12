@@ -50,9 +50,9 @@ include("function.php");
 
             <select name="servicescategorie" id="serviceKapper">
                 <option value="NULL">geen</option>
-                <option value="wassen">wassen</option>
-                <option value="föhnen">föhnen</option>
-                <option value="wassen & föhnen">wassen & föhnen</option>
+                <option value="7">wassen</option>
+                <option value="8">föhnen</option>
+                <option value="9">wassen & föhnen</option>
             </select> <br><br>
 
 
