@@ -11,7 +11,7 @@ $notites = $_POST['notities'];
 $praat = $_POST['praat'];
 $afspraakdatum = $_POST['afspraakdatum'];
 $serviceKapper = $_POST['serviceKapper'];
-$servicescategorie = $_POST['servicescategorie'];
+
 
 
 // print($serviceKapper);
@@ -31,7 +31,7 @@ if (isset($_POST['submit'])) {
 
     $afspraak_id = $conn->lastInsertId();
 
-    $sql = "SELECT * FROM `services` WHERE `servicenaam` = '$serviceKapper'";
+    $sql = "SELECT * FROM `services` WHERE `id` = '$serviceKapper'";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -39,16 +39,16 @@ if (isset($_POST['submit'])) {
     foreach ($result as $row) {
         echo $serviceKapper = $row['servicenaam'];
         echo $serviceKapperid = $row['id'];
-        // echo $serviceKapper;
+        echo $servicescategorie = $row['servicescategorie'];
+        
     }
 
-    // print $serviceKapperid;
+   
 
     $sql = "SELECT * FROM `servicekt` WHERE `service_id` = '$serviceKapperid'";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    // print_r($result);
     foreach ($result as $row) {
         echo $medewerker_id = $row['medewerker_id'];
         // echo $serviceKapperid = $row['servid'];
@@ -59,10 +59,6 @@ if (isset($_POST['submit'])) {
     VALUES ('$afspraak_id', '$medewerker_id',  '$serviceKapperid')";
     $conn->exec($sql);
 
-
-    $sql = "INSERT INTO `services` (`servicescategorie`)
-    VALUES ('$servicescategorie')";
-    $conn->exec($sql);
 
     print_r($servicescategorie);
     header("location:dashboard.php");

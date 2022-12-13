@@ -25,6 +25,7 @@ include("function.php");
         <a href="kalender.php">Kalender</a>
         <a class="active" href="accountmaken.php">Account Maken</a>
         <a href="accountdashboard.php">Account Dashboard</a>
+        <a href="accountsvc.php">account aan service kopple</a>
         <a href="logout.php">Log uit</a>
     </div>
     <!-- END TOP NAV -->

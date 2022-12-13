@@ -21,10 +21,11 @@ include("function.php");
     <!-- START TOP NAV -->
     <div class="topnav">
         <a href="dashboard.php">Dashboard</a>
-        <a class="active" href="booking.php">Afspraak Maken</a>
+        <a href="booking.php">Afspraak Maken</a>
         <a href="kalender.php">Kalender</a>
-        <a href="accountmaken.php">Account Maken</a>
+        <a class="active" href="accountmaken.php">Account Maken</a>
         <a href="accountdashboard.php">Account Dashboard</a>
+        <a href="accountsvc.php">account aan service kopple</a>
         <a href="logout.php">Log uit</a>
     </div>
     <!-- END TOP NAV -->
@@ -36,14 +37,14 @@ include("function.php");
             <strong><label for="naam">kapsel:</label></strong><br>
 
             <select name="serviceKapper" id="serviceKapper">
-                <option value="puntjes bijwerken - dames">puntjes bijwerken - dames</option>
-                <option value="kort haar - dames">kort haar - dames</option>
-                <option value="middenlang haar (tot schouders) - dames">middenlang haar (tot schouders) - dames</option>
-                <option value="lang haar - dames">lang haar - dames</option>
-                <option value="kort haar - heren">kort haar - heren</option>
-                <option value="lang haar - heren">lang haar - heren</option>
-                <option value="kort haar & baard trimmen - heren">kort haar & baard trimmen - heren</option>
-                <option value="lang haar & baard trimmen - heren">lang haar & baard trimmen - heren</option>
+                <option value="21">puntjes bijwerken - dames</option>
+                <option value="22">kort haar - dames</option>
+                <option value="23">middenlang haar (tot schouders) - dames</option>
+                <option value="24">lang haar - dames</option>
+                <option value="25">kort haar - heren</option>
+                <option value="26">lang haar - heren</option>
+                <option value="27">kort haar & baard trimmen - heren</option>
+                <option value="28">lang haar & baard trimmen - heren</option>
             </select>
             <br><br>
             <strong><label for="naam">wassen en of föhnen</label></strong><br>
