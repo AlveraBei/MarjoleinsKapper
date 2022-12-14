@@ -58,8 +58,8 @@ $date = date("Y-m-d");
                     <th>Naam</th>
                     <th>Rol</th>
                     <th>Email</th>
-
                     <th>Edit</th>
+                    <th>services toevoegen</th>
                     <th>Verwijderen</th>
                 </tr>
             </thead>
@@ -79,6 +79,7 @@ $date = date("Y-m-d");
                     echo "<td>" . $row['rol'] . "</td>";
                     echo "<td>" . $row['email'] . "</td>";
                     echo "<td>" . "<a href='useredit.php?id=" . $row['id'] . "' class='btn btn-primary'>🅅</a>" . "</td>";
+                    echo "<td>" . "<a href='userserviceedit.php?id=" . $row['id'] . "' class='btn btn-success'>🅅</a>" . "</td>";
                     echo "<td>" . "<a href='userdelete.php?id=" . $row['id'] . "' class='btn btn-danger'>🅇</a>" . "</td>";
                     echo "</tr>" . "<br>";
                 }
