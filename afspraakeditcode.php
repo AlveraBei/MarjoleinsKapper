@@ -9,7 +9,7 @@ include("function.php");
 if (isset($_POST['updateafspraak'])) {
     $id = $_POST['id'];
     $datum = $_POST['datum'];
-    $service = $_POST['service'];
+    $servicescategorie = $_POST['servicescategorie'];
     $serviceKapper = $_POST['serviceKapper'];
     print_r($service);
 
@@ -25,8 +25,13 @@ if (isset($_POST['updateafspraak'])) {
     $stmt = $conn->prepare($update);
     $stmt->execute();
 
+<<<<<<< Updated upstream
 
     $update = "UPDATE services SET servicescategorie= '$service' WHERE services.id = '$id'";
+=======
+    
+    $update = "UPDATE services SET servicescategorie= '$servicescategorie' WHERE services.id = '$id'";
+>>>>>>> Stashed changes
     $stmt = $conn->prepare($update);
     $stmt->execute();
 

@@ -41,7 +41,9 @@ include 'function.php';
                             $stmt->execute();
                             $result = $stmt->fetchAll(PDO::FETCH_OBJ);
                             foreach ($result as $row) {
+                                $servicenaam = $row->servicenaam;
                             }
+                          
                             ?>
 
 
@@ -53,20 +55,18 @@ include 'function.php';
                             </div>
 
                             <div class="mb-3">
+                                
                                 <select name="serviceKapper" id="serviceKapper">
-                                    <option value="21">puntjes bijwerken - dames</option>
-                                    <option value="22">kort haar - dames</option>
-                                    <option value="23">middenlang haar (totschouders) - dames</option>
-                                    <option value="24">lang haar - dames</option>
-                                    <option value="25">kort haar - heren</option>
-                                    <option value="26">lang haar - heren</option>
-                                    <option value="27">kort haar & baard trimmen - heren</option>
-                                    <option value="28">lang haar & baard trimmen - heren</option>
+                                <option value="<?= $servicenaam ?>"></option>
+                                <option value="Puntjes knippen">Puntjes knippen</option>
+                                <option value="Kort haar">Kort haar</option>
+                                <option value="Haar tot schouders">Haar tot schouders</option>
+                                <option value="Lang haar">Lang haar</option>
                                 </select>
                             </div>
 
                             <div class="mb-3">
-                                <select name="service" id="service">
+                                <select name="servicescategorie" id="service">
                                     <option value="NULL">geen</option>
                                     <option value="7">wassen</option>
                                     <option value="8">föhnen</option>
