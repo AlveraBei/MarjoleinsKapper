@@ -63,6 +63,7 @@ error_reporting(0);
                     <th>Prijs</th>
                     <th>Tijdsduur</th>
                     <th>Service</th>
+                    <th>categorienaam</th>
                     <th>Tijd</th>
                     <th>Naam</th>
                     <th>Email</th>
@@ -88,27 +89,37 @@ error_reporting(0);
                 JOIN `klanten` ON afspraken.klanten_id = klanten.id 
                 JOIN `userkt` ON userkt.afspraak_id = afspraken.afspraak_id
                 JOIN `services` ON services.id = userkt.service_id
+                INNER JOIN `servicescategorie` ON servicescategorie_id = servicescategorie
                 WHERE datum >= '$date'
                 AND datum <'$date' + INTERVAL 1 DAY ");
                 $stmt->execute();
                 $result = $stmt->fetchAll();
                 foreach ($result as $row) {
-                    echo "</tr>" . "<br>";
-                    echo "<td>" . "€" . $row['serviceprijs'] . "</td>";
-                    echo "<td>" . $row['serviceduur'] . "</td>";
-                    echo "<td>" . $row['servicenaam'] . "</td>";
-                    echo "<td>" . $row['datum'] . "</td>";
-                    echo "<td>" . $row['naam'] . "</td>";
-                    echo "<td>" . $row['email'] . "</td>";
-                    echo "<td>" . $row['telefoon'] . "</td>";
-                    echo "<td>" . $row['geslacht'] . "</td>";
-                    echo "<td>" . $row['notities'] . "</td>";
-                    echo "<td>" . $row['praat'] . "</td>";
-                    echo "<td>" . "<a href='editrow.php?id=" . $row['id'] . "' class='btn btn-primary'>🅅</a>" . "</td>";
-                    echo "<td>" . "<a href='afspraakdelete.php.php?id=" . $row['id'] . "' class='btn btn-danger'>🅇</a>" . "</td>";
-                    echo "</tr>" . "<br>";
-                }
+                    echo '</tr>';
+                    echo '<td>' . '€' . $row['serviceprijs'] + $row['categorieprijs'] . '</td>';
+                    echo '<td>' . $row['serviceduur'] + $row['categorieduur']  . '</td>';
+                    echo '<td>' . $row['servicenaam'] . '</td>';
+                    echo '<td>' . $row['categorienaam'] . '</td>';
+                    echo '<td>' . $row['datum'] . '</td>';
+                    echo '<td>' . $row['naam'] . '</td>';
+                    echo '<td>' . $row['email'] . '</td>';
+                    echo '<td>' . $row['telefoon'] . '</td>';
+                    echo '<td>' . $row['geslacht'] . '</td>';
+                    echo '<td>' . $row['notities'] . '</td>';
+                    echo '<td>' . $row['praat'] . '</td>';
+                    echo '<td>' .
+                        "<a href='afspraakedit.php?id=" .
+                        $row['afspraak_id'] .
+                        "' class='btn btn-primary'>🅅</a>" .
+                        '</td>';
+                    echo '<td>' .
+                        "<a href='afspraakdelete.php?id=" .
+                        $row['afspraak_id'] .
+                        "' class='btn btn-danger'>🅇</a>" .
+                        '</td>';
 
+                    echo '</tr>' . '<br>';
+                }
                 ?>
             </tbody>
         </table>
