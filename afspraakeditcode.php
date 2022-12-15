@@ -11,29 +11,33 @@ if (isset($_POST['updateafspraak'])) {
     $datum = $_POST['datum'];
     $servicescategorie = $_POST['servicescategorie'];
     $serviceKapper = $_POST['serviceKapper'];
-    print_r($service);
 
-
-
+    
     $update = "UPDATE afspraken SET datum= '$datum' WHERE afspraak_id = '$id'";
     $stmt = $conn->prepare($update);
     $stmt->execute();
 
+    // SELECT * FROM userkt 
+    // INNER JOIN `services` ON services.id = userkt.service_id
+    // INNER JOIN `servicescategorie` ON servicescategorie_id = servicescategorie
 
-
-    $update = "UPDATE userkt SET service_id= '$serviceKapper' WHERE afspraak_id = '$id'";
+    $update = "UPDATE userkt 
+    INNER JOIN `services` ON services.id = userkt.service_id
+    SET servicenaam= '$serviceKapper' WHERE afspraak_id = '$id'";
     $stmt = $conn->prepare($update);
     $stmt->execute();
 
-<<<<<<< Updated upstream
 
-    $update = "UPDATE services SET servicescategorie= '$service' WHERE services.id = '$id'";
-=======
+    $update = "UPDATE userkt
+    INNER JOIN `services` ON services.id = userkt.service_id
+    INNER JOIN `servicescategorie` ON servicescategorie_id = servicescategorie
+    SET servicescategorie= '$servicescategorie' WHERE afspraak_id = '$id'";
+    $stmt = $conn->prepare($update);
+    $stmt->execute();
     
-    $update = "UPDATE services SET servicescategorie= '$servicescategorie' WHERE services.id = '$id'";
->>>>>>> Stashed changes
-    $stmt = $conn->prepare($update);
-    $stmt->execute();
+    //echo all errors
+    $stmt->debugDumpParams();
+    
 
 
     if ($stmt->rowCount()) {

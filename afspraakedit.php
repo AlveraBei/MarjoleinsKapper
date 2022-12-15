@@ -41,23 +41,22 @@ include 'function.php';
                             $stmt->execute();
                             $result = $stmt->fetchAll(PDO::FETCH_OBJ);
                             foreach ($result as $row) {
-                                $servicenaam = $row->servicenaam;
                             }
-                          
+
                             ?>
 
 
                             <div class="mb-3">
                                 <label>datum</label>
                                 <input type="hidden" name="id" value="<?= $row->afspraak_id ?>" />
+                        
+
                                 <input type="datetime-local" name="datum" value="<?= $row->datum ?>"
                                     class="form-control" />
                             </div>
 
                             <div class="mb-3">
-                                
                                 <select name="serviceKapper" id="serviceKapper">
-                                <option value="<?= $servicenaam ?>"></option>
                                 <option value="Puntjes knippen">Puntjes knippen</option>
                                 <option value="Kort haar">Kort haar</option>
                                 <option value="Haar tot schouders">Haar tot schouders</option>
@@ -66,7 +65,7 @@ include 'function.php';
                             </div>
 
                             <div class="mb-3">
-                                <select name="servicescategorie" id="service">
+                                <select name="servicescategorie" id="servicescategorie">
                                     <option value="NULL">geen</option>
                                     <option value="7">wassen</option>
                                     <option value="8">föhnen</option>

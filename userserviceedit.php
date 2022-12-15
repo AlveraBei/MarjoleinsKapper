@@ -49,17 +49,11 @@ include("function.php");
 
                         <select name="fileselect">
                             <?php
-                           
-                            $stmt = $conn->prepare("SELECT id,servicenaam FROM services");
+                            $stmt = $conn->prepare("SELECT id, servicenaam FROM services");
                             $stmt->execute();
-    
-
                             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                             echo "<option value='" . $row['id'] . "" . $row['servicenaam'] . "'>" . $row['id'] . "&nbsp&nbsp" . $row['servicenaam'] . "</option>";
                             }
-
-
-
                             ?>
                         </select>
                     </div>
