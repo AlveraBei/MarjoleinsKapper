@@ -12,7 +12,7 @@ if (isset($_POST['updateafspraak'])) {
     $service = $_POST['service'];
     $serviceKapper = $_POST['serviceKapper'];
     print_r($service);
-   
+
 
 
     $update = "UPDATE afspraken SET datum= '$datum' WHERE afspraak_id = '$id'";
@@ -25,7 +25,7 @@ if (isset($_POST['updateafspraak'])) {
     $stmt = $conn->prepare($update);
     $stmt->execute();
 
-    
+
     $update = "UPDATE services SET servicescategorie= '$service' WHERE services.id = '$id'";
     $stmt = $conn->prepare($update);
     $stmt->execute();
@@ -34,9 +34,5 @@ if (isset($_POST['updateafspraak'])) {
     if ($stmt->rowCount()) {
         $_SESSION['success'] = "Afspraak Successfully Updated";
         header("location:dashboard.php");
-        
     }
 }
-
-
-?>

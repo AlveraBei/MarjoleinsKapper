@@ -35,9 +35,8 @@ $date = date("Y-m-d");
         <a href="dashboard.php">Dashboard</a>
         <a href="booking.php">Afspraak Maken</a>
         <a href="kalender.php">Kalender</a>
-        <a class="active" href="accountmaken.php">Account Maken</a>
-        <a href="accountdashboard.php">Account Dashboard</a>
-        <a href="accountsvc.php">account aan service kopple</a>
+        <a href="accountmaken.php">Account Maken</a>
+        <a class="active" href="accountdashboard.php">Account Dashboard</a>
         <a href="logout.php">Log uit</a>
     </div>
     <!-- END TOP NAV -->
@@ -65,9 +64,6 @@ $date = date("Y-m-d");
             </thead>
             <tbody>
                 <?php
-
-
-
 
                 // pdo query select all from users
                 $stmt = $conn->prepare("SELECT * FROM `users` WHERE `id` != $id");

@@ -42,10 +42,17 @@ if (isset($_POST['submit'])) {
     foreach ($result as $row) {
         echo $serviceKapper = $row['servicenaam'];
         echo $servicescategorie = $row['servicescategorie'];
+<<<<<<< Updated upstream
         echo $serviceKapperid  = $row['id']; 
     }
 
     
+=======
+    }
+
+
+
+>>>>>>> Stashed changes
     $sql = "SELECT * FROM `servicekt` WHERE `service_id` = '$serviceKapperid'";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
