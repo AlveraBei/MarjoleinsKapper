@@ -37,14 +37,10 @@ include("function.php");
             <strong><label for="naam">kapsel:</label></strong><br>
 
             <select name="serviceKapper" id="serviceKapper">
-                <option value="21">puntjes bijwerken - dames</option>
-                <option value="22">kort haar - dames</option>
-                <option value="23">middenlang haar (tot schouders) - dames</option>
-                <option value="24">lang haar - dames</option>
-                <option value="25">kort haar - heren</option>
-                <option value="26">lang haar - heren</option>
-                <option value="27">kort haar & baard trimmen - heren</option>
-                <option value="28">lang haar & baard trimmen - heren</option>
+                <option value="Puntjes knippen">Puntjes knippen</option>
+                <option value="Kort haar">Kort haar</option>
+                <option value="Haar tot schouders">Haar tot schouders</option>
+                <option value="Lang haar">Lang haar</option>
             </select>
             <br><br>
             <strong><label for="naam">wassen en of föhnen</label></strong><br>
