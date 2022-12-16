@@ -36,15 +36,16 @@ try {
      //Recipients
      $mail->setFrom('thijmenh00@gmail.com', 'Kapper Marjolein');           // Verzener
      $mail->addAddress($email, $naam);                  // Onvanger
-     $mail->addReplyTo('thijmenh00@gmail.com');
+     // $mail->addReplyTo('thijmenh00@gmail.com');
 
      // Content
      $mail->isHTML(true);                                        // Set email format to HTML
      $mail->Subject = 'Afspraak bevestiging';
      $mail->Body    =
-          'Naam: ' . $naam . '<br><br>' .
-          'Email: ' . $email . '<br><br>' .
-          'Hier uw afspraak bevestiging voor ' . $afspraakdatum . ' bij Kapper Marjolein.';
+          'Beste ' . $naam . ',<br><br>' .
+          'Hier bij uw afspraak bevestiging voor ' . $afspraakdatum . ' bij Kapper Marjolein. <br><br>' .
+          'Met vriendelijke groet, <br>' .
+          'Kapper Marjolein';
 
      $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
      $mail->send();

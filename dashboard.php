@@ -98,10 +98,7 @@ $date = date('Y-m-d');
                     echo '<td>' .
                         "<a href='afspraakdelete.php?id=" .
                         $row['afspraak_id'] .
-                        "' class='btn btn-danger'>🅇</a>" .
-                        '</td>';
-
-                    echo '</tr>' . '<br>';
+                        "' class='btn btn-danger'>🅇</a>";
                 }
                 ?>
             </tbody>
