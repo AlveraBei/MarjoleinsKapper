@@ -11,6 +11,10 @@ $afspraakdatum = $_POST['afspraakdatum'];
 $serviceKapper = $_POST['serviceKapper'];
 $servicescategorie = $_POST['servicescategorie'];
 
+$_SESSION['naam'] = $naam;
+$_SESSION['email'] = $email;
+$_SESSION['afspraakdatum'] = $afspraakdatum;
+
 
 
 

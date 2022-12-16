@@ -77,7 +77,6 @@ $date = date("Y-m-d");
                     echo "<td>" . "<a href='useredit.php?id=" . $row['id'] . "' class='btn btn-primary'>🅅</a>" . "</td>";
                     echo "<td>" . "<a href='userserviceedit.php?id=" . $row['id'] . "' class='btn btn-success'>🅅</a>" . "</td>";
                     echo "<td>" . "<a href='userdelete.php?id=" . $row['id'] . "' class='btn btn-danger'>🅇</a>" . "</td>";
-                    echo "</tr>" . "<br>";
                 }
                 ?>
             </tbody>

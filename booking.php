@@ -32,7 +32,7 @@ include("function.php");
 
     <div class="w3-center w3-margin-top">
         <!-- START FORM -->
-        <form action=" add.php" method="POST">
+        <form action="add.php" method="POST">
             <strong><label for="naam">kapsel:</label></strong><br>
 
             <select name="serviceKapper" id="serviceKapper">
