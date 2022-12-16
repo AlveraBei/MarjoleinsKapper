@@ -32,7 +32,7 @@ include("function.php");
 
     <div class="w3-center w3-margin-top">
         <!-- START FORM -->
-        <form action=" add.php" method="post">
+        <form action=" add.php" method="POST">
             <strong><label for="naam">kapsel:</label></strong><br>
 
             <select name="serviceKapper" id="serviceKapper">
@@ -53,7 +53,7 @@ include("function.php");
 
 
             <strong><label for="naam">Voor en achternaam:</label></strong><br>
-            <input type="text" id="naam" placeholder="Naam" name=" naam" required><br><br>
+            <input type="text" id="naam" placeholder="Naam" name="naam" required><br><br>
 
             <strong><label for="email">Email:</label></strong><br>
             <input type="email" id="email" placeholder="Email" name="email" required><br><br>

@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
 
     $afspraak_id = $conn->lastInsertId();
 
-    
+
 
 
 
@@ -42,10 +42,10 @@ if (isset($_POST['submit'])) {
     foreach ($result as $row) {
         echo $serviceKapper = $row['servicenaam'];
         echo $servicescategorie = $row['servicescategorie'];
-        echo $serviceKapperid  = $row['id']; 
+        echo $serviceKapperid  = $row['id'];
     }
 
-    
+
     $sql = "SELECT * FROM `servicekt` WHERE `service_id` = '$serviceKapperid'";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
@@ -61,6 +61,6 @@ if (isset($_POST['submit'])) {
     print("<br>");
     print("<br>");
     print_r($serviceKapper);
-    header("location:dashboard.php");
+    header("location:mailer.php");
     exit();
 }
