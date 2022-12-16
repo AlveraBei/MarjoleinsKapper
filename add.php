@@ -6,9 +6,7 @@ include("function.php");
 $naam = $_POST['naam'];
 $email = $_POST['email'];
 $telefoon = $_POST['telefoon'];
-$geslacht = $_POST['geslacht'];
 $notites = $_POST['notities'];
-$praat = $_POST['praat'];
 $afspraakdatum = $_POST['afspraakdatum'];
 $serviceKapper = $_POST['serviceKapper'];
 $servicescategorie = $_POST['servicescategorie'];
@@ -17,8 +15,8 @@ $servicescategorie = $_POST['servicescategorie'];
 
 
 if (isset($_POST['submit'])) {
-    $sql = "INSERT INTO `klanten`(`naam`, `email`, `telefoon`, `geslacht`, `notities`, `praat`) 
-    VALUES ('$naam', '$email', '$telefoon', '$geslacht', '$notites', '$praat')";
+    $sql = "INSERT INTO `klanten`(`naam`, `email`, `telefoon`, `notities`) 
+    VALUES ('$naam', '$email', '$telefoon', '$notites')";
     $conn->exec($sql);
 
     $klanten_id = $conn->lastInsertId();

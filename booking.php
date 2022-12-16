@@ -64,19 +64,8 @@ include("function.php");
             <strong><label for="date">Afspraak Datum:</label></strong><br>
             <input type="datetime-local" id="afspraak" name="afspraakdatum" min="09:00" max="18:00" required><br><br>
 
-            <strong><label for="geslacht">Geslacht:</label></strong><br>
-            <input type="radio" name="geslacht" value="Man" required> Man
-            <input type="radio" name="geslacht" value="Vrouw" required> Vrouw
-            <br><br>
-
             <strong><label for="notities">Notities:</label></strong><br>
             <input type="text" id="notities" placeholder="Spatie om leeg te houden" name="notities" required><br><br>
-
-            <strong><label for="praat">Wilt u met de kapper gesprekken voeren?: </label></strong><br>
-            <input type="radio" name="praat" value="Niet stil zijn" required> Ja
-            <input type="radio" name="praat" value="Stil zijn" required> Nee
-            <input type="radio" name="praat" value="Maakt niet uit" required> Maakt mij niks uit
-            <br><br>
 
             <input class="button" type="submit" name="submit" value="submit">
         </form>

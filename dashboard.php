@@ -61,9 +61,7 @@ $date = date('Y-m-d');
                     <th>Naam</th>
                     <th>Email</th>
                     <th>Telefoon</th>
-                    <th>Geslacht</th>
                     <th>Notities</th>
-                    <th>Wel of niet praten</th>
                     <th>Wijzigen</th>
                     <th>Annuleren</th>
                 </tr>
@@ -91,9 +89,7 @@ $date = date('Y-m-d');
                     echo '<td>' . $row['naam'] . '</td>';
                     echo '<td>' . $row['email'] . '</td>';
                     echo '<td>' . $row['telefoon'] . '</td>';
-                    echo '<td>' . $row['geslacht'] . '</td>';
                     echo '<td>' . $row['notities'] . '</td>';
-                    echo '<td>' . $row['praat'] . '</td>';
                     echo '<td>' .
                         "<a href='afspraakedit.php?id=" .
                         $row['afspraak_id'] .
