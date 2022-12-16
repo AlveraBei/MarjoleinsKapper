@@ -66,7 +66,7 @@ include 'function.php';
 
                             <div class="mb-3">
                                 <select name="servicescategorie" id="servicescategorie">
-                                    <option value="NULL">geen</option>
+                                    <option value="11">geen</option>
                                     <option value="7">wassen</option>
                                     <option value="8">föhnen</option>
                                     <option value="9">wassen & föhnen</option>

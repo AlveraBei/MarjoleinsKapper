@@ -45,7 +45,7 @@ include("function.php");
             <strong><label for="naam">wassen en of föhnen</label></strong><br>
 
             <select name="servicescategorie" id="serviceKapper">
-                <option value="NULL">geen</option>
+                <option value="11">geen</option>
                 <option value="7">wassen</option>
                 <option value="8">föhnen</option>
                 <option value="9">wassen & föhnen</option>
