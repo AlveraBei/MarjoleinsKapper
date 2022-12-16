@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 16, 2022 at 12:31 PM
+-- Generation Time: Dec 16, 2022 at 12:50 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.5
 
@@ -60,7 +60,14 @@ INSERT INTO `afspraken` (`afspraak_id`, `klanten_id`, `datum`) VALUES
 (180, 203, '2022-12-16 12:13:00'),
 (181, 204, '0000-00-00 00:00:00'),
 (182, 205, '2022-12-16 12:14:00'),
-(183, 206, '2022-12-17 12:16:00');
+(183, 206, '2022-12-17 12:16:00'),
+(184, 207, '2022-12-16 12:36:00'),
+(185, 208, '2022-12-16 12:36:00'),
+(186, 209, '2022-12-16 12:36:00'),
+(187, 210, '2022-12-16 12:36:00'),
+(188, 211, '2022-12-16 12:44:00'),
+(189, 212, '2022-12-16 12:44:00'),
+(190, 213, '2022-12-16 12:48:00');
 
 -- --------------------------------------------------------
 
@@ -177,7 +184,14 @@ INSERT INTO `klanten` (`id`, `naam`, `email`, `telefoon`, `notities`) VALUES
 (203, '32131', '31231', '+313123', '32131'),
 (204, 'nadawdwadawdaw', 'muhamedshamsaddin@gmail.com', '+313123', '32131'),
 (205, 'nadawdwadawdaw', 'muhamedshamsaddin@gmail.com', '+313213321', '3123'),
-(206, '3123', '312', '+313123', '13231');
+(206, '3123', '312', '+313123', '13231'),
+(207, 'a@gmail.com', 'muhamedshamsaddin@gmail.com', '+313333333', '231322'),
+(208, 'a@gmail.com', 'muhamedshamsaddin@gmail.com', '+313333333', '231322'),
+(209, 'a@gmail.com', 'muhamedshamsaddin@gmail.com', '+313333333', '231322'),
+(210, 'a@gmail.com', 'muhamedshamsaddin@gmail.com', '+313333333', '231322'),
+(211, 'a@gmail.com', 'muhamedshamsaddin@gmail.com', '+313333333', '21313'),
+(212, 'a@gmail.com', 'muhamedshamsaddin@gmail.com', '+313333333', '21313'),
+(213, 'a@gmail.com', 'muhamedshamsaddin@gmail.com', '+313333333', '213');
 
 -- --------------------------------------------------------
 
@@ -199,26 +213,18 @@ INSERT INTO `servicekt` (`medewerker_id`, `service_id`) VALUES
 (1, 22),
 (1, 23),
 (1, 24),
-(1, 43),
-(1, 44),
-(1, 45),
-(1, 46),
-(1, 47),
-(1, 48),
-(1, 49),
-(1, 50),
-(1, 21),
-(1, 22),
-(1, 23),
-(1, 24),
-(1, 43),
-(1, 44),
-(1, 45),
-(1, 46),
-(1, 47),
-(1, 48),
-(1, 49),
-(1, 50);
+(1, 59),
+(1, 60),
+(1, 61),
+(1, 62),
+(1, 63),
+(1, 64),
+(1, 65),
+(1, 66),
+(1, 67),
+(1, 68),
+(1, 69),
+(1, 70);
 
 -- --------------------------------------------------------
 
@@ -243,18 +249,18 @@ INSERT INTO `services` (`id`, `serviceduur`, `serviceprijs`, `servicenaam`, `ser
 (22, 30, '15', 'Kort haar', 7),
 (23, 30, '20', 'Haar tot schouders', 7),
 (24, 30, '25', 'Lang haar', 7),
-(43, 30, '10', 'Puntjes knippen', 8),
-(44, 30, '10', 'Puntjes knippen', 9),
-(45, 30, '15', 'Kort haar', 8),
-(46, 30, '15', 'Kort haar', 9),
-(47, 30, '20', 'Puntjes knippen', 11),
-(48, 30, '20', 'Puntjes knippen', 7),
-(49, 30, '25', 'Lang haar', 8),
-(50, 30, '25', 'Lang haar', 9),
-(51, 30, '10', 'Puntjes knippen', 11),
-(52, 30, '15', 'Kort haar', 11),
-(53, 30, '20', 'Haar tot schouders', 11),
-(54, 30, '25', 'Lang haar', 11);
+(59, 30, '10', 'Puntjes knippen', 8),
+(60, 30, '10', 'Puntjes knippen', 9),
+(61, 30, '10', 'Puntjes knippen', 11),
+(62, 30, '15', 'Kort haar', 8),
+(63, 30, '15', 'Kort haar', 9),
+(64, 30, '15', 'Kort haar', 11),
+(65, 30, '25', 'Lang haar', 8),
+(66, 30, '25', 'Lang haar', 9),
+(67, 30, '25', 'Lang haar', 11),
+(68, 30, '25', 'Lang haar', 8),
+(69, 30, '25', 'Lang haar', 9),
+(70, 30, '25', 'Lang haar', 11);
 
 -- --------------------------------------------------------
 
@@ -296,13 +302,8 @@ CREATE TABLE `userkt` (
 --
 
 INSERT INTO `userkt` (`afspraak_id`, `user_id`, `service_id`) VALUES
-(167, 1, 48),
-(175, 1, 50),
-(179, 1, 45),
-(180, 1, 46),
-(181, 1, 49),
-(182, 1, 50),
-(183, 1, 50);
+(189, 1, 61),
+(190, 1, 61);
 
 -- --------------------------------------------------------
 
@@ -393,19 +394,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `afspraken`
 --
 ALTER TABLE `afspraken`
-  MODIFY `afspraak_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=184;
+  MODIFY `afspraak_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=191;
 
 --
 -- AUTO_INCREMENT for table `klanten`
 --
 ALTER TABLE `klanten`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=207;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=214;
 
 --
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- AUTO_INCREMENT for table `servicescategorie`
