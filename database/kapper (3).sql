@@ -32,7 +32,7 @@ CREATE TABLE `afspraakkt` (
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
+-- ---------------------------------------------------------
 
 --
 -- Table structure for table `afspraken`
