@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2022 at 10:33 AM
+-- Generation Time: Dec 20, 2022 at 11:24 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -32,7 +32,7 @@ CREATE TABLE `afspraakkt` (
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- ---------------------------------------------------------
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `afspraken`
@@ -140,7 +140,7 @@ INSERT INTO `services` (`id`, `serviceduur`, `serviceprijs`, `servicenaam`, `ser
 (74, 30, '15', 'Kort haar', 8),
 (75, 30, '15', 'Kort haar', 9),
 (76, 30, '15', 'Kort haar', 11),
-(77, 30, '20', 'Haar tot schouders', 8),
+(77, 30, '20', 'Haar tot schouders\n', 9),
 (78, 30, '20', 'Haar tot schouders', 9),
 (79, 30, '20', 'Haar tot schouders', 11),
 (80, 30, '25', 'Lang haar', 8),
