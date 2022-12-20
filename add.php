@@ -63,6 +63,6 @@ if (isset($_POST['submit'])) {
     print("<br>");
     print("<br>");
     print_r($serviceKapper);
-    header("location:mailer.php");
+    header("location:/mailer.php");
     exit();
 }

@@ -52,7 +52,7 @@ try {
 
      $_SESSION['status'] = "Mail sent";
 
-     header("location:dashboard.php");
+     header("location:/dashboard.php");
 
      echo ($_SESSION['status']);
      $mail->smtpClose();
@@ -60,7 +60,7 @@ try {
 } catch (Exception $e) {
      $_SESSION['status'] = "Mail not sent";
 
-     header("location:dashboard.php");
+     header("location:/dashboard.php");
 
      echo ($_SESSION['status']);
      $mail->smtpClose();

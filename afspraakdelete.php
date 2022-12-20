@@ -6,5 +6,5 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $delete = $conn->prepare("DELETE FROM `afspraken` WHERE afspraak_id = $id");
     $delete->execute();
-    header("location:dashboard.php");
+    header("location:/dashboard.php");
 }

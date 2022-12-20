@@ -17,6 +17,6 @@ if (isset($_POST['update_user'])) {
     $stmt->execute($data);
     if ($stmt->rowCount()) {
         $_SESSION['success'] = "Student Updated Successfully";
-        header("location:accountdashboard.php");
+        header("location:/accountdashboard.php");
     }
 }

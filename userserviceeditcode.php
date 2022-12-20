@@ -10,16 +10,13 @@ if (isset($_POST['update_user'])) {
     $rol = $_POST['rol'];
     $email = $_POST['email'];
     $wachtwoord = $_POST['wachtwoord'];
-    
+
     $query = "UPDATE users SET rol=:rol, email=:email, wachtwoord=:wachtwoord WHERE id=:user_id";
     $stmt = $conn->prepare($query);
     $data = [':rol' => $rol, ':email' => $email, ':wachtwoord' => $wachtwoord, ':user_id' => $user_id];
     $stmt->execute($data);
     if ($stmt->rowCount()) {
         $_SESSION['success'] = "Student Updated Successfully";
-        header("location:accountdashboard.php");
+        header("location:/accountdashboard.php");
     }
 }
-
-?>
-

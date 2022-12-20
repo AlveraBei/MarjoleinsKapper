@@ -17,7 +17,7 @@ try {
     VALUES ('$rol', '$naam', '$email','$hash_password')";
     $conn->exec($sql);
     echo "New record created successfully";
-    header("location:accountdashboard.php");
+    header("location:/accountdashboard.php");
 } catch (PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
 }

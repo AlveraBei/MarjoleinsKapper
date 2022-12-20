@@ -6,5 +6,5 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $delete = $conn->prepare("DELETE FROM `users` WHERE id = ?");
     $delete->execute([$id]);
-    header("location:accountdashboard.php");
+    header("location:/accountdashboard.php");
 }
