@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>2. Kies een moment</p>
+    <label for="afspraakdatum">
+        <h3>Datum afspraak</h3>
+    </label>
+    <input type="date" id="afspraakdatum" name="afspraakdatum" value="2022-12-15" min="2022-12-15" max="2024-11-011"
+        required /><br><br>
+    <div id="output">output</div>
+
+    <script>
+        document.getElementById("afspraakdatum").onchange = function () {
+            updateValue();
+        }
+        function updateValue() {
+            var input = document.getElementById("afspraakdatum").value;
+            let datum = new Date(input);
+            document.getElementById("output").innerHTML = datum.getDate() + "/"+(datum.getMonth()+1)+"/" +datum.getFullYear();
+        }
+
+    </script>
+</body>
+
+</html>

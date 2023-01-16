@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>JavaScript Math</h2>
+
+    <p>Math.floor(Math.random() * 10) returns a random integer between 0 and 9 (both
+        included):</p>
+
+    <div>44</div>
+
+    <button> dian </button>
+    <script>
+        let btn = document.querySelector('button')
+        let box = document.querySelector('div')
+
+        let arr = ['找', '钱', '水', '利', '人', 'alex']
+        btn.addEventListener('click', function () {
+            box.innerHTML = arr[randomNumber(0, arr.length)]
+        })
+
+        const randomNumber = (min, max) => {
+            var ran = Math.floor(Math.random() * (max - min)) + min
+            console.log(ran);
+            return ran;
+        }
+
+    </script>
+</body>
+
+</html>
