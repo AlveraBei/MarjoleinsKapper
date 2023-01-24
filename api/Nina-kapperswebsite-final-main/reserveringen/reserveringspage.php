@@ -162,12 +162,11 @@
 
         <h3>Beschikbare tijden voor geselecteerde datum</h3>
         
-
-       <div class="tijdendisplay">   
-
-        </div>
-        
-        <input type="radio" id="8:30-9:00" name="keuzetijd" value="8:30-9:00,0,0"  onclick="myFunction()">
+      <!-- div voor node -->
+       <div class="tijdendisplay" >   
+       </div>
+      <!-- div voor node -->
+        <input type="radio" id="keuzetijd" name="keuzetijd" value="8:30-9:00"  onclick="myFunction()">
         <label class="labelforbuttonshort" for="8:30-9:00">Van 8:30-9:00</label><br><br>
         <input type="radio" id="9:00-9:30" name="keuzetijd" value="9:00-9:30,0,0"  onclick="myFunction()">
         <label class="labelforbuttonshort" for="9:00-9:30">Van 9:30-9:30</label><br><br>

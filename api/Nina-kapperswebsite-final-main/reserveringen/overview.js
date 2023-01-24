@@ -1,68 +1,22 @@
 //1.als klant service & datum geklikt heeft,stuur deze data naar backend toe
 //bron:https://www.freecodecamp.org/chinese/news/how-to-make-api-calls-with-fetch/
 let datumStuur = document.getElementById("afspraakdatum")
-
-function infoButtonListener(event) {
-
-  let info = {
-    "time": event.target.value,
-  }; //https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event
-  let infotime = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(info),
-  };
-  fetch('BeitestTime.php', infotime)
-    .then(response => {
-      console.log(response.json())
-    })
-}
-
 datumStuur.addEventListener('change', infoButtonListener)
 
 let infoButtons = document.querySelectorAll(".datatime")
 for (var i = 0; i < infoButtons.length; i++) {
   const infoButton = infoButtons[i];
-
-
-  // let infoButton = document.getElementById("kort haar")
-  // let infoButton = document.getElementsByName("datatime")
-  // let infoButton = document.frm.keuzebehandelingoverig.value
   infoButton.addEventListener('click', infoButtonListener)
 }
-// const testdata = () =>{
 
-// let info =  {"tim":value,} 
-// let infotime= {
-//   method: 'POST',
-//   headers: {
-//     'Content-Type': 'application/json',
-//   },
-//   body: JSON.stringify(info),
-// };
-// fetch('BeitestTime.php', infotime)
-// .then(response => {
-//   console.log(response.json())
-// })
-// }
-
-// var xmlHttp = new XMLHttpRequest();
-// xmlHttp.onload = function(){
-//   const tijdList = JSON.parse(this.responseText);
-//   Document.getElementById("").innerHTML = tijdList;
-
-// }
-// xmlHttp.open("POST","BeitestTime.php"); 
-// xmlHttp.send();
-
-function myFunctionA() {
+function infoButtonListener() {
+  let tijdendisplay = document.querySelector(".tijdendisplay");
   var keuzeb = document.getElementsByName("keuzebehandeling");
   var over = document.getElementsByName("keuzebehandelingoverig");
   var fin = document.getElementsByName("keuzefinish");
+
   console.log(fin);
-  let gekozen;
+  let gekozen = 0;
   for (var i = 0; i < keuzeb.length; i++) {
     let keuzebb = keuzeb[i];
     if (keuzebb.checked) {
@@ -86,14 +40,62 @@ function myFunctionA() {
     if (finish.checked) {
       gekozenFinish = finish.value.split(",")[1];
     }
-
   }
   console.log(gekozenFinish)
+  let serviceDuration = parseInt(gekozen) + parseInt(gekozenOverig) + parseInt(gekozenFinish);
+  console.log(serviceDuration);
+  //bron：https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
+
+  if (serviceDuration == 0 || datumStuur.value == "") {
+    tijdendisplay.innerHTML = '';
+    return;
+  }
+
+  let info = {
+    "datum": datumStuur.value,
+    "serviceDuration": serviceDuration,
+
+  }; //https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event
+  let infotime = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(info),
+  };
+  fetch('BeitestTime.php', infotime)
+    .then(response => {
+      //https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Using_promises
+      response.json().then(beschikbaarTijdlist => {
+
+
+        tijdendisplay.innerHTML = "";
+
+        for (let i = 0; i < beschikbaarTijdlist.length; i++) {
+          let Tijd = beschikbaarTijdlist[i]
+          // console.log(Tijd)
+          let beschikbaarTijd = document.querySelector(".labelforbuttonshort");
+          let Node = document.createTextNode(Tijd.date);
+
+          var tijdblok = document.createElement("input");
+          // {/* <input type="radio" id="keuzetijd" name="keuzetijd" value="8:30-9:00"  onclick="myFunction()"> */}
+          tijdblok.type = "radio";
+          tijdblok.id = "keuzetijd-" + i;
+          tijdblok.name = "keuzetijd";
+          tijdblok.value = Tijd;
+          tijdblok.onclick = myFunction;
+          tijdendisplay.appendChild(tijdblok);
+
+          var label = document.createElement("label");
+          label.className = "labelforbuttonshort";
+          label.htmlFor = "keuzetijd-" + i;
+          var lableTime = document.createTextNode(Tijd);
+          label.appendChild(lableTime);
+          tijdendisplay.appendChild(label);
+        }
+      })
+    })
 }
-
-
-
-
 
 //-------------------------bei----------------------------
 document.getElementById("afspraakdatum").onchange = function () {
@@ -203,3 +205,4 @@ function calc() {
   }
 
 }
+
